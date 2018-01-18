@@ -1,0 +1,18 @@
+
+.main-container{
+    width : 90%;
+    margin : 0 auto;
+}
+.tree-side{
+    width : 40%;
+    float: left;    
+}
+.tree-container{
+    min-height: 300px;
+    max-height: 500px;
+    overflow: auto;    
+}
+.info-side{
+    float: left;
+    width : 60%;
+}

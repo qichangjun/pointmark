@@ -1,0 +1,37 @@
+<div>
+    <h3>失分项列表</h3>
+    <div>
+        <span class="label label-success">自评得分:</span>
+        <span> 71.45分</span>
+    </div>    
+    <div>
+        <span class="label label-success">查看部门:</span>
+        <ul class="nav nav-pills">
+            <li role="presentation" [ngClass]="{active : parameter.sortField == 'all'}"><a [routerLink]="[]" [queryParams]="{sortField:'all'}" >所有</a></li>
+            <li role="presentation" [ngClass]="{active : parameter.sortField == 'ye'}"><a [routerLink]="[]" [queryParams]="{sortField:'ye'}" >业</a></li>
+            <li role="presentation" [ngClass]="{active : parameter.sortField == 'ren'}"><a [routerLink]="[]" [queryParams]="{sortField:'ren'}" >人</a></li>
+          </ul>
+    </div>
+    <div>
+        <span class="label label-success">查看部门:</span>
+        <table class="table">
+            <tr>
+                <th>指标要求</th>
+                <th>自评</th>
+                <th>分值</th>
+                <th>自评时间</th>
+            </tr>          
+            <tr *ngFor="let row of rows">
+                <td>
+                  <a [routerLink]="['../grade']" [queryParams]="{id:row.id}">
+                      {{row.title}}
+                  </a>
+                </td>
+                <td>{{row.mark}}</td>
+                <td>{{row.point}}</td>
+                <td>{{row.markDate}}</td>
+            </tr>                         
+        </table>
+    </div>    
+</div>
+  

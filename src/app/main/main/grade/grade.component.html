@@ -1,0 +1,71 @@
+<div>
+  <h3>指标说明</h3>
+  <p *ngIf="!this.parameter.id">
+      你还没有选择任何节点
+  </p>
+  <div  *ngIf="this.parameter.id">
+    <h1>
+      主机房选址应原理强电磁场
+    </h1>            
+    <span class="label label-danger">0.4分</span>    
+    <div>
+        <div>
+            <span class="label label-success">评分细节:</span>
+            <span> 远离强电磁场</span>
+        </div>     
+        <div>
+            <span class="label label-success">评分方式:</span>
+            <span> 查看报告，记录；实地查看</span>
+        </div>      
+        <div>
+            <span class="label label-success">问题清单:</span>
+            <table class="table">
+                <tr>
+                    <th>完成</th>
+                    <th>问题描述</th>
+                </tr>          
+                <tr>
+                    <td>111.pdf</td>
+                    <td>2017-6-30</td>
+                </tr>                         
+            </table>
+            <a href="">新增</a>
+        </div>   
+        <div>
+            <span class="label label-success">自查记录:</span>
+            <table class="table">
+                <tr>
+                    <th>得分</th>
+                    <th>情况说明</th>
+                </tr>          
+                <tr>
+                    <td>111.pdf</td>
+                    <td>2017-6-30</td>
+                </tr>                         
+            </table>
+            <a href="">新增</a>
+        </div>  
+        
+        <div>
+            <span class="label label-success">证明材料:</span>
+            <span>办公室提供机房图纸，设计文档等</span>
+        </div>  
+        
+        <div>
+            <span class="label label-success">认证材料:</span>
+            <table class="table">
+                <tr>
+                    <th>材料名称</th>
+                    <th>提交时间</th>
+                </tr>          
+                <tr>
+                    <td>111.pdf</td>
+                    <td>2017-6-30</td>
+                </tr>                         
+            </table>
+            <a href="">新增</a>
+        </div>  
+    </div>
+  </div>
+  
+</div>

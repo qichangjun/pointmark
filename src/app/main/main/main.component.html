@@ -1,0 +1,23 @@
+<app-nav-bar></app-nav-bar>
+<div class="jumbotron">
+  <h3>杭州市档案馆数字档案馆系统测试工作</h3>
+  <span>2016年3月,如有问题请练习85355222-417</span>  
+  <span class="label label-danger">目前自评: {{point}}分</span>
+</div>
+
+<div class="main-container">
+    <div class="tree-side">
+        <div class="page-header">
+            <h3>数字档案馆系统测试指标</h3>
+        </div>
+        <div class="tree-container">
+            <app-point-tree
+                (changeNode)="changeNode($event)"
+            ></app-point-tree>
+        </div>
+    </div>
+    <div class="info-side">
+            <router-outlet></router-outlet>
+    </div>
+
+</div>
