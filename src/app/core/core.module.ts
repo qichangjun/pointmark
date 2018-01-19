@@ -3,12 +3,18 @@ import {
   Optional, SkipSelf }       from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthGuard } from './guards/auth.guard';
+import { ApiUrlService } from './services/api-url.service';
+import { AuthService } from './services/auth.service';
+import { ConstantService } from './services/constant.service';
+import { ServiceHandleService } from './services/service-handle.service';
+
+
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [],
-  providers:[AuthGuard]
+  providers:[AuthGuard,ApiUrlService,AuthService,ConstantService,ServiceHandleService]
 })
 export class CoreModule { 
   constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
@@ -21,9 +27,7 @@ export class CoreModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CoreModule,
-      providers: [        
-        AuthGuard
-      ]
+      providers: []
     };
   }
 }

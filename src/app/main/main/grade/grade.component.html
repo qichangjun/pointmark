@@ -1,21 +1,21 @@
 <div>
   <h3>指标说明</h3>
-  <p *ngIf="!this.parameter.id">
+  <p [hidden]="this.parameter.id">
       你还没有选择任何节点
   </p>
-  <div  *ngIf="this.parameter.id">
+  <div [hidden]="!this.parameter.id">
     <h1>
-      主机房选址应原理强电磁场
+      {{baseInfo.name}}
     </h1>            
-    <span class="label label-danger">0.4分</span>    
+    <span class="label label-danger">{{baseInfo.rate}}分</span>    
     <div>
         <div>
             <span class="label label-success">评分细节:</span>
-            <span> 远离强电磁场</span>
+            <span> {{baseInfo.ratingDetails}}</span>
         </div>     
         <div>
             <span class="label label-success">评分方式:</span>
-            <span> 查看报告，记录；实地查看</span>
+            <span> {{baseInfo.evalutionMethod}}</span>
         </div>      
         <div>
             <span class="label label-success">问题清单:</span>
@@ -23,13 +23,29 @@
                 <tr>
                     <th>完成</th>
                     <th>问题描述</th>
+                    <th></th>
+                    <th></th>
                 </tr>          
-                <tr>
-                    <td>111.pdf</td>
-                    <td>2017-6-30</td>
+                <tr *ngFor="let question of questionList">
+                    <td>{{question.questionStatus}}</td>
+                    <td>{{question.questionDes}}</td>
+                    <td>
+                        <a (click)="deleteQuestion(question.id)">删除</a>
+                    </td>
+                    <td>
+                        <a (click)="updateQuestion(question.id,1)">更新</a>
+                    </td>
                 </tr>                         
             </table>
-            <a href="">新增</a>
+            <a (click)="isOpenQuestionForm=!isOpenQuestionForm">
+                    {{isOpenQuestionForm ? '收起' : '新增'}}
+            </a>
+            <div class="collapse" [ngClass]="{'in':isOpenQuestionForm}">
+                <div class="well">                   
+                    <textarea placeholder="描述" [(ngModel)]="newQuestion.questionDes" cols="30" rows="10"  class="form-control" ></textarea>
+                    <button class="btn btn-danger" (click)="addQuestion()">确定</button>
+                </div>   
+            </div>
         </div>   
         <div>
             <span class="label label-success">自查记录:</span>
@@ -37,13 +53,30 @@
                 <tr>
                     <th>得分</th>
                     <th>情况说明</th>
+                    <th></th>
+                    <th></th>
                 </tr>          
-                <tr>
-                    <td>111.pdf</td>
-                    <td>2017-6-30</td>
+                <tr *ngFor="let source of sourceList">
+                    <td>{{source.score}}</td>
+                    <td>{{source.description}}</td>
+                    <td>{{source.time}}</td>
+                    <td>
+                        <a (click)="deleteSource(source)">
+                            删除
+                        </a>
+                    </td>
                 </tr>                         
             </table>
-            <a href="">新增</a>
+            <a (click)="isOpenSourceForm=!isOpenSourceForm">
+                    {{isOpenSourceForm ? '收起' : '新增'}}
+            </a>
+            <div class="collapse" [ngClass]="{'in':isOpenSourceForm}">
+                <div class="well">                   
+                    <textarea placeholder="描述" [(ngModel)]="newSource.description" cols="30" rows="10"  class="form-control" ></textarea>
+                    <input placeholder="分值" type="text" class="form-control" [(ngModel)]="newSource.score">
+                    <button class="btn btn-danger" (click)="addSource()">确定</button>
+                </div>   
+            </div>
         </div>  
         
         <div>
@@ -57,13 +90,62 @@
                 <tr>
                     <th>材料名称</th>
                     <th>提交时间</th>
+                    <th></th>
                 </tr>          
-                <tr>
-                    <td>111.pdf</td>
-                    <td>2017-6-30</td>
-                </tr>                         
+                <tr *ngFor="let file of fileList">
+                        <td>{{file.fileName}}</td>
+                        <td>{{file.time}}</td>
+                        <td>
+                            <a (click)="deleteFile(file)">
+                                删除
+                            </a>
+                        </td>
+                    </tr>                      
             </table>
-            <a href="">新增</a>
+            <a (click)="isOpenFileForm=!isOpenFileForm">
+                    {{isOpenFileForm ? '收起' : '新增'}}
+            </a>
+            <div class="collapse" [ngClass]="{'in':isOpenFileForm}">
+                    <a style="height:30px;width:100%" class="mat-menu-item__button a-upload" >
+                        <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>                        
+                    </a>
+                    <table class="table" *ngIf="uploader">
+                        <tr>
+                            <th>文件名</th>
+                            <th>状态</th>
+                            <th></th>
+                        </tr>          
+                        <tr *ngFor="let file of uploader.queue">
+                            <td>{{file._file.name}}</td>                                   
+                            <td>
+                                <span *ngIf="file.isError" class="fa fa-exclamation-circle status--prompt--icon" style="color: #cd624c">错误</span>
+                                <span *ngIf="file.isSuccess" class="fa fa-check-circle status--prompt--icon" style="color: #56DA90">成功</span>
+                                <span *ngIf="file.isUploading">
+                                {{file.progress}}%
+                                </span>
+                                <span *ngIf="file.isReady && !file.isUploading">
+                                    排队中
+                                </span>
+                            </td>
+                            <td>
+                                <div [hidden]="file.isSuccess">
+                                    <button type="button" class="btn btn-success btn-xs"
+                                            (click)="file.upload()" [disabled]="file.isReady || file.isUploading || file.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span>上传
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-xs"
+                                            (click)="file.cancel()" [disabled]="!file.isUploading">
+                                        <span class="glyphicon glyphicon-ban-circle"></span> 取消
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-xs"
+                                            (click)="file.remove()">
+                                        <span class="glyphicon glyphicon-trash"></span> 删除
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>                      
+                    </table>
+            </div>
         </div>  
     </div>
   </div>

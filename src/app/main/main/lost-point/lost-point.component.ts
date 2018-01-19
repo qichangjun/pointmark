@@ -12,6 +12,8 @@ import 'rxjs/add/operator/switchMap';
 export class LostPointComponent implements OnInit {
   parameter : Params = {}
   rows : Array<any> = [];
+  keywordLists : Array<any> = [];
+  baseInfo : BaseInfo = {};
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -19,17 +21,28 @@ export class LostPointComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.keywordLists = this.lostPointService.getKeywordLists();
     this.route.queryParams
       .switchMap(async (params : Params) => {          
         this.parameter = Object.assign(this.parameter,params)
-        return this.lostPointService.getList(this.parameter)
+        this.parameter.keywords = this.parameter.keywords || 'all'
+        return this.lostPointService.getList(this.parameter.keywords)
       })
       .subscribe(res => {
-        this.rows = res.data;        
+        this.rows = res.scoreReduces; 
+        this.baseInfo = {
+          currentScore : res.currentScore,
+          totalScore : res.totalScore
+        }              
       });  
   }
 }
 
 class Params {
-  sortField? : string;
+  keywords? : string;
+}
+
+class BaseInfo {
+  currentScore? : string;
+  totalScore? : string;
 }

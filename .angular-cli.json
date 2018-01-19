@@ -18,14 +18,17 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "styles": [
+      "styles": [        
+        "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.css"
+        "../node_modules/toastr/build/toastr.min.css"
       ],
       "scripts": [
         "../node_modules/js-cookie/src/js.cookie.js",
         "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/dropzone/dist/dropzone.js",
+        "../node_modules/toastr/build/toastr.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

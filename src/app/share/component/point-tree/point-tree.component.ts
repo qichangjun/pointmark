@@ -46,13 +46,17 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
           this.tree.treeModel.focusedNodeId = null;
         }else{      
           let node = this.tree.treeModel.getNodeById(param.id)
+          if (!node){
+            console.error('没有在树节点中找到id为' + param.id + '的节点')
+            return
+          }
           this.expandNode(node);
           this.tree.treeModel.setFocusedNode(node)          
         }
       })
   }
 
-  expandNode(node){    
+  expandNode(node){        
     node.expand()
     if (node.parent){
       this.expandNode(node.parent)

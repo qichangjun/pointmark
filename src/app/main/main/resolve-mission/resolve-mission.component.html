@@ -7,31 +7,31 @@
       <div>
           <div>
               <span class="label label-success">指标名称:</span>
-              <span> 1.1.1</span>
+              <span>{{baseInfo.quota}}</span>
           </div>     
           <div>
               <span class="label label-success">指标分值:</span>
-              <span> 0.4分</span>
+              <span>{{baseInfo.rate}}分</span>
           </div>   
           <div>
               <span class="label label-success">指标要求:</span>
-              <span> xxx</span>
+              <span> {{baseInfo.requirements}}</span>
           </div>     
           <div>
               <span class="label label-success">评估方式:</span>
-              <span> xxx</span>
+              <span> {{baseInfo.evalutionMethod}}</span>
           </div> 
           <div>
               <span class="label label-success">责任处室:</span>
-              <input type="text" class="form-control" id="responiblity" >
+              <input [(ngModel)]="baseInfo.dutyDept" type="text" class="form-control" id="dutyDept" >
           </div> 
           <div>
               <span class="label label-success">工作分解:</span>
-              <textarea class="form-control" name="missionResolve" id="missionResolve" cols="30" rows="10"></textarea>             
+              <textarea [(ngModel)]="baseInfo.workResolve" class="form-control" name="workResolve" id="workResolve" cols="30" rows="10"></textarea>             
           </div> 
           <div>
               <span class="label label-success">更新时间:</span>
-              <span> 2017-06-30</span>
+              <span> {{baseInfo.time}}</span>
           </div>
           <div>
               <button class="btn btn-default" (click)="updateMission()">确定</button>
