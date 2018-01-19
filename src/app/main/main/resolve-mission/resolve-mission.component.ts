@@ -9,7 +9,7 @@ import { BaseInfo } from '../grade/grade.class';
 @Component({
   selector: 'app-resolve-mission',
   templateUrl: './resolve-mission.component.html',
-  styleUrls: ['./resolve-mission.component.css'],
+  styleUrls: ['./resolve-mission.component.scss'],
   providers: [ResolveMissionService,GradeService]
 })
 export class ResolveMissionComponent implements OnInit {

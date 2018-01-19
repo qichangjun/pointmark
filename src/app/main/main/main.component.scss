@@ -1,18 +1,39 @@
 
 .main-container{
-    width : 90%;
-    margin : 0 auto;
+    position: absolute;
+    top: 300px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 30px;
 }
 .tree-side{
     width : 40%;
-    float: left;    
+    height: 100%;
+    float: left; 
+    margin-right: 3%; 
+    border: 1px solid #3379b7;
+    border-radius: 3px;  
+    .page-header{
+        margin: 0;
+        padding: 10px 15px;
+        background: #3379b7;
+        .head--title{
+            margin: 0;
+            font-size: 20px;
+            color: #ffffff;
+        }
+    }
 }
 .tree-container{
-    min-height: 300px;
-    max-height: 500px;
-    overflow: auto;    
+    height: calc(100% - 45px);
+    overflow: auto;  
+    padding: 15px;  
 }
 .info-side{
     float: left;
-    width : 60%;
+    height: 100%;
+    width : 57%;
+    border: 1px solid #3379b7;
+    border-radius: 3px; 
 }
