@@ -6,6 +6,7 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PointTreeComponent } from './component/point-tree/point-tree.component';
 import { TreeModule } from 'angular-tree-component';
+
 @NgModule({
   imports: [
     RouterModule,

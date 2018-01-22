@@ -7,11 +7,12 @@ import { ApiUrlService } from './services/api-url.service';
 import { AuthService } from './services/auth.service';
 import { ConstantService } from './services/constant.service';
 import { ServiceHandleService } from './services/service-handle.service';
-
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
   ],
   declarations: [],
   providers:[AuthGuard,ApiUrlService,AuthService,ConstantService,ServiceHandleService]

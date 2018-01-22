@@ -7,13 +7,32 @@ import { AuthService } from '../../../core/services/auth.service';
 import { ApiUrlService } from '../../../core/services/api-url.service';
 import { FileSelectDirective, FileDropDirective, FileUploader,FileUploaderOptions } from 'ng2-file-upload/ng2-file-upload';
 import { Params,BaseInfo,SourceList,QuestionList,NewQuestion,NewSource } from './grade.class';
-
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 declare var toastr:any;
 @Component({
   selector: 'app-grade',
   templateUrl: './grade.component.html',
   styleUrls: ['./grade.component.css'],
-  providers:[GradeService]
+  providers:[GradeService],
+  animations: [
+    trigger('toggleExpand',  [
+      state('0', style({
+        'max-height': '0px',
+        overflow:'hidden'
+      })),
+      state('1', style({
+        'max-height': '300px',
+        overflow:'hidden'
+      })),
+      transition('0 <=> 1', animate('300ms ease-in-out'))
+    ])   
+  ]
 })
 export class GradeComponent implements OnInit,AfterViewInit {
   public uploader:FileUploader;
