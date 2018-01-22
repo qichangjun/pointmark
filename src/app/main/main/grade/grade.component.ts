@@ -23,11 +23,11 @@ declare var toastr:any;
   animations: [
     trigger('toggleExpand',  [
       state('0', style({
-        'max-height': '0px',
+        'height': '0',
         overflow:'hidden'
       })),
       state('1', style({
-        'max-height': '300px',
+        'height': '*',
         overflow:'hidden'
       })),
       transition('0 <=> 1', animate('300ms ease-in-out'))
