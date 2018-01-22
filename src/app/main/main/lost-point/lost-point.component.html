@@ -1,36 +1,41 @@
-<div>
-    <h3>失分项列表</h3>
-    <div>
-        <span class="label label-success">自评得分:</span>
-        <span> {{baseInfo.currentScore}}分</span>
-    </div>    
-    <div>
-        <span class="label label-success">查看部门:</span>
-        <ul class="nav nav-pills">
-            <li *ngFor="let keyword of keywordLists"  [ngClass]="{active : parameter.keywords == keyword.value}"><a [routerLink]="[]" [queryParams]="{keywords:keyword.value}" >{{keyword.displayName}}</a></li>
-          </ul>
+<div class="info-side__wrapper">
+    <h3 class="info-side__header--title">失分项列表</h3>
+    <div class="info-side__content--box">
+        <div class="info-side__content--table">
+            <div class="content--table__tr">
+                <span class="label label-success content--table__tr__td">自评得分:</span>
+                <span> {{baseInfo.currentScore}}分</span>
+            </div>
+            <div class="content--table__tr">
+                <span class="label label-success content--table__tr__td">查看部门:</span>
+                <ul class="nav nav-pills">
+                    <li *ngFor="let keyword of keywordLists"  [ngClass]="{active : parameter.keywords == keyword.value}"><a [routerLink]="[]" [queryParams]="{keywords:keyword.value}" >{{keyword.displayName}}</a></li>
+                </ul>
+            </div>
+            <div class="content--table__tr align--top">
+                <span class="label label-success content--table__tr__td">查看部门:</span>
+                <span [hidden]="rows.length > 0">没有数据</span>
+                <table class="table content--table__tr__table" [hidden]="rows.length == 0">
+                    <tr>
+                        <th>指标要求</th>
+                        <th>自评分值</th>
+                        <th>指标分值</th>
+                        <th>自评时间</th>
+                    </tr>
+                    <tr *ngFor="let row of rows">
+                        <td>
+                            <a [routerLink]="['../grade']" [queryParams]="{id:row.id}">
+                                {{row.requirements}}
+                            </a>
+                        </td>
+                        <td>{{row.score}}</td>
+                        <td>{{row.rate}}</td>
+                        <td>{{row.time}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-    <div>
-        <span class="label label-success">查看部门:</span>
-        <span [hidden]="rows.length > 0">没有数据</span>
-        <table class="table" [hidden]="rows.length == 0">
-            <tr>
-                <th>指标要求</th>
-                <th>自评分值</th>
-                <th>指标分值</th>
-                <th>自评时间</th>
-            </tr>          
-            <tr *ngFor="let row of rows">
-                <td>
-                  <a [routerLink]="['../grade']" [queryParams]="{id:row.id}">
-                      {{row.requirements}}
-                  </a>
-                </td>
-                <td>{{row.score}}</td>
-                <td>{{row.rate}}</td>
-                <td>{{row.time}}</td>
-            </tr>                         
-        </table>
-    </div>    
+
 </div>
   

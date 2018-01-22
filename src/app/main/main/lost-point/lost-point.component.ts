@@ -6,7 +6,7 @@ import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'app-lost-point',
   templateUrl: './lost-point.component.html',
-  styleUrls: ['./lost-point.component.css'],
+  styleUrls: ['./lost-point.component.scss'],
   providers: [LostPointService]
 })
 export class LostPointComponent implements OnInit {

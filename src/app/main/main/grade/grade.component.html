@@ -1,25 +1,36 @@
-<div>
-  <h3>指标说明</h3>
+<div class="info-side__wrapper">
+  <h3 class="info-side__header--title">指标说明</h3>
   <p [hidden]="this.parameter.id">
       你还没有选择任何节点
   </p>
-  <div [hidden]="!this.parameter.id">
-    <h1>
-      {{baseInfo.name}}
-    </h1>            
-    <span class="label label-danger">{{baseInfo.rate}}分</span>    
-    <div>
-        <div>
-            <span class="label label-success">评分细节:</span>
+  <div [hidden]="!this.parameter.id" class="info-side__content--box grade--component">
+      <table class="head--content--description--box">
+          <tr>
+              <td class="description">
+                  <div class="description--content">
+                      {{baseInfo.name}}
+                  </div>
+              </td>
+              <td class="rate">
+                  <div class="label label-danger rate--content">{{baseInfo.rate}}分</div>
+              </td>
+          </tr>
+
+
+      </table>
+
+    <div class="info-side__content--table">
+        <div class="content--table__tr">
+            <span class="label label-success content--table__tr__td">评分细节:</span>
             <span> {{baseInfo.ratingDetails}}</span>
         </div>     
-        <div>
-            <span class="label label-success">评分方式:</span>
+        <div class="content--table__tr">
+            <span class="label label-success content--table__tr__td">评分方式:</span>
             <span> {{baseInfo.evalutionMethod}}</span>
         </div>      
-        <div>
-            <span class="label label-success">问题清单:</span>
-            <table class="table">
+        <div class="content--table__tr align--top">
+            <span class="label label-success content--table__tr__td">问题清单:</span>
+            <table class="table content--table__tr__table">
                 <tr>
                     <th>完成</th>
                     <th>问题描述</th>
@@ -37,19 +48,21 @@
                     </td>
                 </tr>                         
             </table>
+        </div>
+        <p class="text-center">
             <a (click)="isOpenQuestionForm=!isOpenQuestionForm">
-                    {{isOpenQuestionForm ? '收起' : '新增'}}
+                {{isOpenQuestionForm ? '收起' : '新增'}}
             </a>
-            <div  [@toggleExpand]="isOpenQuestionForm"  >
-                <div class="well">                   
-                    <textarea placeholder="描述" [(ngModel)]="newQuestion.questionDes" cols="30" rows="10"  class="form-control" ></textarea>
-                    <button class="btn btn-danger" (click)="addQuestion()">确定</button>
-                </div>   
+        </p>
+        <div  [@toggleExpand]="isOpenQuestionForm"  >
+            <div class="well">
+                <textarea placeholder="描述" [(ngModel)]="newQuestion.questionDes" cols="30" rows="10"  class="form-control" ></textarea>
+                <button class="btn btn-danger" (click)="addQuestion()">确定</button>
             </div>
-        </div>   
-        <div>
-            <span class="label label-success">自查记录:</span>
-            <table class="table">
+        </div>
+        <div class="content--table__tr align--top">
+            <span class="label label-success content--table__tr__td">自查记录:</span>
+            <table class="table content--table__tr__table">
                 <tr>
                     <th>得分</th>
                     <th>情况说明</th>
@@ -67,26 +80,30 @@
                     </td>
                 </tr>                         
             </table>
+
+        </div>
+        <p class="text-center">
             <a (click)="isOpenSourceForm=!isOpenSourceForm">
-                    {{isOpenSourceForm ? '收起' : '新增'}}
+                {{isOpenSourceForm ? '收起' : '新增'}}
             </a>
-            <div [@toggleExpand]="isOpenSourceForm">
-                <div class="well">                   
-                    <textarea placeholder="描述" [(ngModel)]="newSource.description" cols="30" rows="10"  class="form-control" ></textarea>
-                    <input placeholder="分值" type="text" class="form-control" [(ngModel)]="newSource.score">
-                    <button class="btn btn-danger" (click)="addSource()">确定</button>
-                </div>   
+        </p>
+
+        <div [@toggleExpand]="isOpenSourceForm">
+            <div class="well">
+                <textarea placeholder="描述" [(ngModel)]="newSource.description" cols="30" rows="10"  class="form-control" ></textarea>
+                <input placeholder="分值" type="text" class="form-control" [(ngModel)]="newSource.score">
+                <button class="btn btn-danger" (click)="addSource()">确定</button>
             </div>
-        </div>  
+        </div>
         
-        <div>
-            <span class="label label-success">证明材料:</span>
+        <div class="content--table__tr">
+            <span class="label label-success content--table__tr__td">证明材料:</span>
             <span>办公室提供机房图纸，设计文档等</span>
         </div>  
         
-        <div>
-            <span class="label label-success">认证材料:</span>
-            <table class="table">
+        <div class="content--table__tr align--top">
+            <span class="label label-success content--table__tr__td">认证材料:</span>
+            <table class="table content--table__tr__table">
                 <tr>
                     <th>材料名称</th>
                     <th>提交时间</th>
@@ -102,51 +119,53 @@
                         </td>
                     </tr>                      
             </table>
+        </div>
+        <p class="text-center">
             <a (click)="isOpenFileForm=!isOpenFileForm">
-                    {{isOpenFileForm ? '收起' : '新增'}}
+                {{isOpenFileForm ? '收起' : '新增'}}
             </a>
-            <div [@toggleExpand]="isOpenFileForm">
-                    <a style="height:30px;width:100%" class="mat-menu-item__button a-upload" >
-                        <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>                        
-                    </a>
-                    <table class="table" *ngIf="uploader">
-                        <tr>
-                            <th>文件名</th>
-                            <th>状态</th>
-                            <th></th>
-                        </tr>          
-                        <tr *ngFor="let file of uploader.queue">
-                            <td>{{file._file.name}}</td>                                   
-                            <td>
-                                <span *ngIf="file.isError" class="fa fa-exclamation-circle status--prompt--icon" style="color: #cd624c">错误</span>
-                                <span *ngIf="file.isSuccess" class="fa fa-check-circle status--prompt--icon" style="color: #56DA90">成功</span>
+        </p>
+        <div [@toggleExpand]="isOpenFileForm">
+            <a style="height:30px;width:100%" class="mat-menu-item__button a-upload" >
+                <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
+            </a>
+            <table class="table" *ngIf="uploader">
+                <tr>
+                    <th>文件名</th>
+                    <th>状态</th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let file of uploader.queue">
+                    <td>{{file._file.name}}</td>
+                    <td>
+                        <span *ngIf="file.isError" class="fa fa-exclamation-circle status--prompt--icon" style="color: #cd624c">错误</span>
+                        <span *ngIf="file.isSuccess" class="fa fa-check-circle status--prompt--icon" style="color: #56DA90">成功</span>
                                 <span *ngIf="file.isUploading">
                                 {{file.progress}}%
                                 </span>
                                 <span *ngIf="file.isReady && !file.isUploading">
                                     排队中
                                 </span>
-                            </td>
-                            <td>
-                                <div [hidden]="file.isSuccess">
-                                    <button type="button" class="btn btn-success btn-xs"
-                                            (click)="file.upload()" [disabled]="file.isReady || file.isUploading || file.isSuccess">
-                                        <span class="glyphicon glyphicon-upload"></span>上传
-                                    </button>
-                                    <button type="button" class="btn btn-warning btn-xs"
-                                            (click)="file.cancel()" [disabled]="!file.isUploading">
-                                        <span class="glyphicon glyphicon-ban-circle"></span> 取消
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-xs"
-                                            (click)="file.remove()">
-                                        <span class="glyphicon glyphicon-trash"></span> 删除
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>                      
-                    </table>
-            </div>
-        </div>  
+                    </td>
+                    <td>
+                        <div [hidden]="file.isSuccess">
+                            <button type="button" class="btn btn-success btn-xs"
+                                    (click)="file.upload()" [disabled]="file.isReady || file.isUploading || file.isSuccess">
+                                <span class="glyphicon glyphicon-upload"></span>上传
+                            </button>
+                            <button type="button" class="btn btn-warning btn-xs"
+                                    (click)="file.cancel()" [disabled]="!file.isUploading">
+                                <span class="glyphicon glyphicon-ban-circle"></span> 取消
+                            </button>
+                            <button type="button" class="btn btn-danger btn-xs"
+                                    (click)="file.remove()">
+                                <span class="glyphicon glyphicon-trash"></span> 删除
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
   </div>
   

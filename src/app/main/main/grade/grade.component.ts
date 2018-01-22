@@ -112,7 +112,7 @@ export class GradeComponent implements OnInit,AfterViewInit {
   //获取问题清单列表
   async getQuestionList(){
     let res = await this.gradeService.getQuestionList(this.parameter.id)
-    this.questionList = res;
+    this.questionList = res.questions;
   }
   //删除问题清单列表
   async deleteQuestion(id){

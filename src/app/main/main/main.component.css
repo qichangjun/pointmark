@@ -1,10 +1,23 @@
 .main-container {
   position: absolute;
-  top: 208px;
-  left: 0;
+  top: 210px;
   right: 0;
-  bottom: 0;
-  padding: 0 30px; }
+  bottom: 20px; }
+  @media (min-width: 768px) {
+    .main-container {
+      width: 750px;
+      left: 50%;
+      margin-left: -375px; } }
+  @media (min-width: 992px) {
+    .main-container {
+      width: 970px;
+      left: 50%;
+      margin-left: -485px; } }
+  @media (min-width: 1200px) {
+    .main-container {
+      width: 1170px;
+      left: 50%;
+      margin-left: -585px; } }
 
 .tree-side {
   width: 40%;
