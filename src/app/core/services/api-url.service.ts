@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class ApiUrlService {
 
   login = '/user/login';
-  quotaInfo = '/quota/list';
+  quotaInfo = '/quota/detail';
   getQuestionList = '/question/list';
   deleteQuestion = '/question/delete';
   addQuestion = '/question/save';
