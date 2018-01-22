@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConstantService } from '../../../core/services/constant.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { ApiUrlService } from '../../../core/services/api-url.service';
+import { FileSelectDirective, FileDropDirective, FileUploader,FileUploaderOptions } from 'ng2-file-upload/ng2-file-upload';
 import {
   trigger,
   state,
@@ -35,6 +36,7 @@ export class HomePageComponent implements OnInit {
   isUploading : boolean = false;
   dropZone : any;
   isOpenFileForm : boolean = false;
+  public uploader:FileUploader;
   constructor(
     private _constantService : ConstantService,
     private _AuthService : AuthService,
@@ -42,7 +44,11 @@ export class HomePageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.uploader = new FileUploader({autoUpload:true,url: this._constantService.baseUrl() + this._apiUrlService.upload,
+      additionalParameter: {
+        accessToken : this._AuthService.getCurrentUser().accessToken,
+        accessUser : this._AuthService.getCurrentUser().accessKey
+      }});
   }
 
 }
