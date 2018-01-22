@@ -1,0 +1,64 @@
+.main-container {
+  position: absolute;
+  top: 208px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 30px; }
+
+.tree-side {
+  width: 40%;
+  height: 100%;
+  float: left;
+  margin-right: 3%;
+  border: 1px solid #3479b6;
+  border-radius: 3px; }
+  .tree-side .page-header {
+    margin: 0;
+    padding: 10px 15px;
+    background: #3479b6; }
+    .tree-side .page-header .head--title {
+      margin: 0;
+      font-size: 20px;
+      color: #ffffff; }
+
+.tree-container {
+  height: calc(100% - 45px);
+  overflow: auto;
+  padding: 15px; }
+
+.info-side {
+  float: left;
+  height: 100%;
+  width: 57%;
+  border: 1px solid #3479b6;
+  border-radius: 3px; }
+
+.object--head--wrapper {
+  background: #ededed; }
+  .object--head--wrapper .jumbotron {
+    padding-top: 10px;
+    padding-bottom: 20px; }
+    @media screen and (min-width: 768px) {
+      .object--head--wrapper .jumbotron {
+        padding-top: 10px;
+        padding-bottom: 20px; } }
+    .object--head--wrapper .jumbotron.object--head--box {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      @media (min-width: 768px) {
+        .object--head--wrapper .jumbotron.object--head--box {
+          width: 750px; } }
+      @media (min-width: 992px) {
+        .object--head--wrapper .jumbotron.object--head--box {
+          width: 970px; } }
+      @media (min-width: 1200px) {
+        .object--head--wrapper .jumbotron.object--head--box {
+          width: 1170px; } }
+
+/*# sourceMappingURL=main.component.css.map */
