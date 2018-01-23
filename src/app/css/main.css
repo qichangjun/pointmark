@@ -100,4 +100,10 @@ a {
   .open--question--form--drop .well__textarea {
     margin-bottom: 10px; }
 
+.toggle-children-wrapper {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+  width: 10px; }
+
 /*# sourceMappingURL=main.css.map */
