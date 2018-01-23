@@ -22,7 +22,7 @@ export class GradeService {
   ) { }
   getBaseInfo(id ?) : Promise<any> {    
     let params = new URLSearchParams();
-    params.set('quotaId',id)
+    params.set('id',id)
     params.set('accessKey',this._AuthService.getCurrentUser().accessKey)
     params.set('accessToken',this._AuthService.getCurrentUser().accessToken)
     return this.http.get(this._constantService.baseUrl() + this._apiUrlService['quotaInfo'],{search : params})

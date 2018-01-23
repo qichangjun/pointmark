@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseUrl : 'http://mvn.docworks.cn:9092/mockjsdata/5'
+  baseUrl : 'http://192.168.0.153:8080/'
 };

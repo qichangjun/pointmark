@@ -155,7 +155,7 @@ export class GradeComponent implements OnInit,AfterViewInit {
   //获取材料列表
   async getFileList(){
     let res = await this.gradeService.getFileList(this.parameter.id)
-    this.fileList = res
+    this.fileList = res.files
   }
   //删除材料
   async deleteFile(file){

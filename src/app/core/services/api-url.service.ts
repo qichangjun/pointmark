@@ -21,4 +21,5 @@ export class ApiUrlService {
   scoreReduceDetailList = '/scoreReduceDetail/list';
 
   getTreeInfo = '/quota/treeList';
+  register = '/user/register';
 }

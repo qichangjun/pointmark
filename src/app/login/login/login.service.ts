@@ -30,4 +30,16 @@ export class LoginService {
                       this._ServiceHandleService.handleError(error)
                     );
   }
+
+  register(paramete ?) : Promise<any> {    
+    let post_data = paramete
+    return this.http.post(this._constantService.baseUrl() + this._apiUrlService['register'],post_data)
+                    .toPromise()
+                    .then(res =>
+                      this._ServiceHandleService.extractDataSuccess(res)
+                    )
+                    .catch(error =>
+                      this._ServiceHandleService.handleError(error)
+                    );
+  }
 }

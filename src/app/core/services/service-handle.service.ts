@@ -23,8 +23,7 @@ export class ServiceHandleService {
 
   public extractData(res: Response) {
     let body = res.json();    
-    // if (body.code == 1)
-    if (0 == 0)
+    if (body.code == 1)    
     {
       return body.data || { };
     }else{
@@ -38,8 +37,7 @@ export class ServiceHandleService {
 
   public extractDataSuccess(res: Response) {      
     let body = res.json();    
-    // if (body.code == 70086)
-    if (0 == 0){      
+    if (body.code == 1){  
       toastr.success(body.message)
       return body.data || {};
     }else{           

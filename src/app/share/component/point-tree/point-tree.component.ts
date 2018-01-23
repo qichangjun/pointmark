@@ -23,7 +23,7 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
       }
       this.expandNode(node);
       this.tree.treeModel.setFocusedNode(node)
-    },100)    
+    })    
   };
   _nodes = [];
   options = {animateExpand:true,childrenField:'childList'}
