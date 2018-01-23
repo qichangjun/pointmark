@@ -136,7 +136,7 @@ export class GradeComponent implements OnInit,AfterViewInit {
   //获取自查记录
   async getSorceRecordList(){
     let res = await this.gradeService.getSorceRecordList(this.parameter.id)
-    this.sourceList = res 
+    this.sourceList = res.scoreRecords
   }
   //删除自查记录
   async deleteSource(source){

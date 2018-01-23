@@ -18,5 +18,7 @@ export class ApiUrlService {
   deleteFile = '/scoreRecord/delete';
   upload = 'upload';
 
-  scoreReduceDetailList = '/scoreReduceDetail/list'
+  scoreReduceDetailList = '/scoreReduceDetail/list';
+
+  getTreeInfo = '/quota/treeList';
 }

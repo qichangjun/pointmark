@@ -19,6 +19,7 @@
         </div>
         <div class="tree-container">
             <app-point-tree
+            [nodes]="nodes"
                 (changeNode)="changeNode($event)"
             ></app-point-tree>
         </div>

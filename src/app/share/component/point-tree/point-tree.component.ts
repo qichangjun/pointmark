@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter,ViewChild,AfterViewInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter,ViewChild,AfterViewInit,Input,OnChanges } from '@angular/core';
 import { TreeNode } from 'angular-tree-component';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -9,49 +9,52 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PointTreeComponent implements OnInit ,AfterViewInit{
   @ViewChild('tree') tree:any;
   @Output() changeNode : EventEmitter<any> = new EventEmitter();
-  options = {
-  }
-  nodes = [
-    {
-      id: 1,
-      name: '数字档案馆系统测试指标表',
-      type: 'root',
-      owner: ['办','信'],
-      children: [
-        { id: 2, name: '1 基础设施',owner: ['办'],root:'unit',children:
-          [
-            {id: 21, name: '1.1 主机房',owner: ['办','信'],type:'childUnit'},
-            {id: 22, name: '1.2 网络平台',type:'childUnit',children:[
-              {id:221,name:'1.1.1 ',owner: ['办'],type:'item'}
-            ]}
-          ]        
-        }
-      ]
-    }   
-  ];
+  @Input()   
+  set nodes(nodes){    
+    this._nodes = nodes;
+    if (this._nodes.length == 0 || !this.parameter.id){
+      return 
+    }        
+    setTimeout(()=>{
+      let node = this.tree.treeModel.getNodeById(this.parameter.id);        
+      if (!node){
+        console.error('没有在树节点中找到id为' + this.parameter.id + '的节点')
+        return
+      }
+      this.expandNode(node);
+      this.tree.treeModel.setFocusedNode(node)
+    },100)    
+  };
+  _nodes = [];
+  options = {animateExpand:true,childrenField:'childList'}
+  
   parameter : Params = {}
   constructor(
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+    
+   }
 
   ngOnInit(){
-
+    
   }
+
   ngAfterViewInit() {
     this.route.queryParams
-      .subscribe((param : Params)=>{
+      .subscribe((param : Params)=>{        
         if (!param.id){          
           this.tree.treeModel.activeNodeIds = {}
           this.tree.treeModel.focusedNodeId = null;
-        }else{      
-          let node = this.tree.treeModel.getNodeById(param.id)
+        }else{
+          this.parameter.id = param.id     
+          let node = this.tree.treeModel.getNodeById(this.parameter.id);        
           if (!node){
-            console.error('没有在树节点中找到id为' + param.id + '的节点')
+            console.error('没有在树节点中找到id为' + this.parameter.id + '的节点')
             return
           }
           this.expandNode(node);
-          this.tree.treeModel.setFocusedNode(node)          
+          this.tree.treeModel.setFocusedNode(node)                    
         }
       })
   }
