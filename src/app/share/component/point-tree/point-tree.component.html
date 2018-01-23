@@ -2,8 +2,10 @@
         <ng-template #treeNodeTemplate let-node let-index="index">
             <span (click)="go(node)">
                     <span *ngIf="node.data.nodeType != 'bottom'" class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+
+                    <span *ngIf="node.data.nodeType == 'bottom'" class="glyphicon glyphicon-folder-close" aria-hidden="true">别针</span>
                     <span>{{ node.data.name }}</span>
                     <span *ngFor="let owner of node.data.owner" class="badge">{{owner}}</span>
-            </span>                          
+            </span>
         </ng-template>
 </tree-root>
