@@ -13,6 +13,10 @@ export class LoginComponent implements OnInit {
     userName : '',
     password : ''
   }
+  registerInfo : LoginInfo = {
+    userName : '',
+    password : ''
+  }
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -28,6 +32,11 @@ export class LoginComponent implements OnInit {
       {accessKey:res.accessKey,accessToken:res.accessToken},
       {expires:365 })    
     this.router.navigate(['/main']);
+  }
+
+  async register(){
+    let res = await this.loginService.register(this.registerInfo)
+    
   }
 }
 

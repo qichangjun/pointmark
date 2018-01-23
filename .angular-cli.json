@@ -24,6 +24,7 @@
         "../node_modules/toastr/build/toastr.min.css"
       ],
       "scripts": [
+        "../node_modules/moment/min/moment.min.js",
         "../node_modules/js-cookie/src/js.cookie.js",
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",

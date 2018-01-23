@@ -32,19 +32,33 @@
             <span class="label label-success content--table__tr__td">问题清单:</span>
             <table class="table content--table__tr__table">
                 <tr>
+                    <th>#</th>
                     <th>完成</th>
                     <th>问题描述</th>
-                    <th></th>
-                    <th></th>
+                    <th>提交时间</th>
+                    <th>更新时间</th>
                 </tr>          
-                <tr *ngFor="let question of questionList">
-                    <td>{{question.questionStatus}}</td>
-                    <td>{{question.questionDes}}</td>
+                <tr *ngFor="let question of questionList; let i = index">
                     <td>
+                        {{i + 1}}
+                    </td>
+                    <td>
+                        <span *ngIf="question.questionStatus==0">
+                            未完成
+                        </span>
+                        <span *ngIf="question.questionStatus==1">
+                            完成
+                        </span>
+                    </td>
+                    <td>{{question.questionDes}}
                         <a (click)="deleteQuestion(question.id)">删除</a>
                     </td>
                     <td>
-                        <a (click)="updateQuestion(question.id,1)">更新</a>
+                        {{question.commitTime | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}
+                    </td>
+                    <td>
+                        {{question.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}
+                        <a *ngIf="question.questionStatus==0" (click)="updateQuestion(question.id,1)">完成</a>
                     </td>
                 </tr>                         
             </table>

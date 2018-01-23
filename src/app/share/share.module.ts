@@ -6,7 +6,7 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PointTreeComponent } from './component/point-tree/point-tree.component';
 import { TreeModule } from 'angular-tree-component';
-
+import { DateFormatPipe } from './pipe/date-format.pipe'
 @NgModule({
   imports: [
     RouterModule,
@@ -19,8 +19,8 @@ import { TreeModule } from 'angular-tree-component';
     CommonModule,
     HttpModule,
     FormsModule,ReactiveFormsModule,
-    NavBarComponent,PointTreeComponent
+    NavBarComponent,PointTreeComponent,DateFormatPipe
   ],
-  declarations: [NavBarComponent, PointTreeComponent]
+  declarations: [NavBarComponent, PointTreeComponent,DateFormatPipe]
 })
 export class ShareModule {}
