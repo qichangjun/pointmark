@@ -1,3 +1,36 @@
+@charset "UTF-8";
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; }
+
+::-webkit-scrollbar-track {
+  background-color: transparent; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  width: 5px;
+  border-radius: 10px; }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #adadad; }
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #adadad; }
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; }
+
+/*定义滚动条的轨道，内阴影及圆角*/
+.scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; }
+
+/*定义滑块，内阴影及圆角*/
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  width: 5px;
+  border-radius: 10px; }
+
 a {
   cursor: pointer; }
 
@@ -57,5 +90,14 @@ a {
       display: flex;
       justify-content: center;
       padding-top: 10px; }
+
+.open--question--form--drop .well {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 10px 25px;
+  margin-bottom: 5px; }
+  .open--question--form--drop .well__textarea {
+    margin-bottom: 10px; }
 
 /*# sourceMappingURL=main.css.map */

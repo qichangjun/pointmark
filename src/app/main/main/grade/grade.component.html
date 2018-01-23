@@ -23,11 +23,11 @@
         <div class="content--table__tr">
             <span class="label label-success content--table__tr__td">评分细节:</span>
             <span> {{baseInfo.ratingDetails}}</span>
-        </div>     
+        </div>
         <div class="content--table__tr">
             <span class="label label-success content--table__tr__td">评分方式:</span>
             <span> {{baseInfo.evalutionMethod}}</span>
-        </div>      
+        </div>
         <div class="content--table__tr align--top">
             <span class="label label-success content--table__tr__td">问题清单:</span>
             <table class="table content--table__tr__table">
@@ -36,7 +36,7 @@
                     <th>问题描述</th>
                     <th></th>
                     <th></th>
-                </tr>          
+                </tr>
                 <tr *ngFor="let question of questionList">
                     <td>{{question.questionStatus}}</td>
                     <td>{{question.questionDes}}</td>
@@ -46,7 +46,7 @@
                     <td>
                         <a (click)="updateQuestion(question.id,1)">更新</a>
                     </td>
-                </tr>                         
+                </tr>
             </table>
         </div>
         <p class="text-center">
@@ -54,10 +54,12 @@
                 {{isOpenQuestionForm ? '收起' : '新增'}}
             </a>
         </p>
-        <div  [@toggleExpand]="isOpenQuestionForm"  >
+        <div  [@toggleExpand]="isOpenQuestionForm" class="open--question--form--drop"  >
             <div class="well">
-                <textarea placeholder="描述" [(ngModel)]="newQuestion.questionDes" cols="30" rows="10"  class="form-control" ></textarea>
-                <button class="btn btn-danger" (click)="addQuestion()">确定</button>
+                <textarea placeholder="描述" [(ngModel)]="newQuestion.questionDes"  rows="3"  class="form-control well__textarea" ></textarea>
+                <p class="text-center">
+                  <button class="btn btn-danger" (click)="addQuestion()">确定</button>
+                </p>
             </div>
         </div>
         <div class="content--table__tr align--top">
@@ -68,7 +70,7 @@
                     <th>情况说明</th>
                     <th></th>
                     <th></th>
-                </tr>          
+                </tr>
                 <tr *ngFor="let source of sourceList">
                     <td>{{source.score}}</td>
                     <td>{{source.description}}</td>
@@ -78,7 +80,7 @@
                             删除
                         </a>
                     </td>
-                </tr>                         
+                </tr>
             </table>
 
         </div>
@@ -88,19 +90,21 @@
             </a>
         </p>
 
-        <div [@toggleExpand]="isOpenSourceForm">
+        <div [@toggleExpand]="isOpenSourceForm" class="open--question--form--drop">
             <div class="well">
-                <textarea placeholder="描述" [(ngModel)]="newSource.description" cols="30" rows="10"  class="form-control" ></textarea>
-                <input placeholder="分值" type="text" class="form-control" [(ngModel)]="newSource.score">
-                <button class="btn btn-danger" (click)="addSource()">确定</button>
+                <textarea placeholder="描述" [(ngModel)]="newSource.description"  rows="3"  class="form-control well__textarea" ></textarea>
+                <input placeholder="分值" type="text" class="form-control well__textarea" [(ngModel)]="newSource.score">
+                <p class="text-center">
+                  <button class="btn btn-danger" (click)="addSource()">确定</button>
+                </p>
             </div>
         </div>
-        
+
         <div class="content--table__tr">
             <span class="label label-success content--table__tr__td">证明材料:</span>
             <span>办公室提供机房图纸，设计文档等</span>
-        </div>  
-        
+        </div>
+
         <div class="content--table__tr align--top">
             <span class="label label-success content--table__tr__td">认证材料:</span>
             <table class="table content--table__tr__table">
@@ -108,7 +112,7 @@
                     <th>材料名称</th>
                     <th>提交时间</th>
                     <th></th>
-                </tr>          
+                </tr>
                 <tr *ngFor="let file of fileList">
                         <td>{{file.fileName}}</td>
                         <td>{{file.time}}</td>
@@ -117,7 +121,7 @@
                                 删除
                             </a>
                         </td>
-                    </tr>                      
+                    </tr>
             </table>
         </div>
         <p class="text-center">
@@ -125,7 +129,7 @@
                 {{isOpenFileForm ? '收起' : '新增'}}
             </a>
         </p>
-        <div [@toggleExpand]="isOpenFileForm">
+        <div [@toggleExpand]="isOpenFileForm" class="">
             <a style="height:30px;width:100%" class="mat-menu-item__button a-upload" >
                 <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
             </a>
@@ -168,5 +172,5 @@
         </div>
     </div>
   </div>
-  
+
 </div>
