@@ -26,7 +26,15 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
     })
   };
   _nodes = [];
-  options = {animateExpand:true,childrenField:'childList'}
+  
+  options = {animateExpand:true,childrenField:'childList',actionMapping:{
+    mouse:{
+      click:(tree,node,$event)=>{
+        node.expand()
+        this.changeNode.emit(node)
+      }
+    }
+  }}
 
   parameter : Params = {}
   constructor(
@@ -64,11 +72,6 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
     if (node.parent){
       this.expandNode(node.parent)
     }
-  }
-
-  clickNode(node){
-    node.expand()
-    this.changeNode.emit(node)
   }
 }
 

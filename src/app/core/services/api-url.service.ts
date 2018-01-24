@@ -15,14 +15,14 @@ export class ApiUrlService {
   addSource = '/scoreRecord/save';
 
   getFileList = '/file/list';
-  deleteFile = '/scoreRecord/delete';
+  deleteFile = '/file/delete';
   upload = '/file/save';
 
   scoreReduceDetailList = '/quota/scoreReduceDetail/list';
 
   getTreeInfo = '/quota/treeList';
   register = '/user/register';
-  download = '/fileData/download';
+  download = '/file/download';
   resetPassword = '/user/resetPassword';
   updateMission = '/quota/update';
 }

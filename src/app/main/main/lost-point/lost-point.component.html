@@ -3,9 +3,18 @@
     <div class="info-side__content--box">
         <div class="info-side__content--table">
             <div class="content--table__tr">
-                <span class="label label-success content--table__tr__td">自评得分:</span>
+                <span class="label label-success content--table__tr__td">当前处室获得的分值:</span>
                 <span> {{baseInfo.currentScore}}分</span>
             </div>
+
+            <div class="content--table__tr">
+                    <span class="label label-success content--table__tr__td">当前处室负责的分值:</span>
+                    <span> {{baseInfo.currentRate}}分</span>
+                </div>
+                <div class="content--table__tr">
+                        <span class="label label-success content--table__tr__td">自评总分:</span>
+                        <span> {{baseInfo.totalScore}}分</span>
+                    </div>
             <div class="content--table__tr">
                 <span class="label label-success content--table__tr__td">查看部门:</span>
                 <ul class="nav nav-pills">
@@ -13,7 +22,7 @@
                 </ul>
             </div>
             <div class="content--table__tr align--top">
-                <span class="label label-success content--table__tr__td">查看部门:</span>
+                <!-- <span class="label label-success content--table__tr__td">查看部门:</span> -->
                 <span [hidden]="rows.length > 0">没有数据</span>
                 <table class="table content--table__tr__table" [hidden]="rows.length == 0">
                     <tr>
@@ -30,7 +39,7 @@
                         </td>
                         <td>{{row.score}}</td>
                         <td>{{row.rate}}</td>
-                        <td>{{row.time}}</td>
+                        <td>{{row.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</td>
                     </tr>
                 </table>
             </div>

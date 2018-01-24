@@ -1,6 +1,6 @@
 <tree-root #tree [nodes]="_nodes" [options]="options">
         <ng-template #treeNodeTemplate let-node let-index="index">
-            <div (click)="clickNode(node)">
+            <div (click)="node.mouseAction('click', $event)" >
                     <span *ngIf="node.data.nodeType != 'bottom'" class="glyphicon glyphicon-folder-close tree--icon" aria-hidden="true"></span>
                     <span *ngIf="node.data.nodeType == 'bottom'" class="glyphicon glyphicon-paperclip tree--icon" aria-hidden="true"></span>
                     <span>{{ node.data.name }}</span>

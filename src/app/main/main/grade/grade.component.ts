@@ -69,6 +69,27 @@ export class GradeComponent implements OnInit,AfterViewInit {
         accessToken : this._AuthService.getCurrentUser().accessToken,
         accessKey : this._AuthService.getCurrentUser().accessKey
       }});
+
+    this.uploader.onBeforeUploadItem = (fileItem) =>{            
+      this.uploader.options.additionalParameter['quotaId'] = this.parameter.id
+    }
+    this.uploader.onCompleteAll = ()=>{
+      this.getFileList()
+    }
+    this.uploader.onSuccessItem = (item,res) =>{
+      if(res){
+        let data = JSON.parse(res)
+        if (data.code == 1){
+          item.isSuccess = true  
+          toastr.success(data.message)
+          item.remove()
+          return 
+        }
+        item.isSuccess = false
+        item.isError = true
+        toastr.error(data.message)
+      } 
+    }
     this.route.queryParams
       .switchMap(async (params : Params) => {          
         this.parameter = Object.assign(this.parameter,params)
@@ -89,24 +110,7 @@ export class GradeComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(){
-    this.uploader.onBeforeUploadItem = (fileItem) =>{            
-      this.uploader.options.additionalParameter['quotaId'] = this.parameter.id
-    }
-    this.uploader.onCompleteAll = ()=>{
-      this.getFileList()
-    }
-    this.uploader.onSuccessItem = (item,res) =>{
-      if(res){
-        let data = JSON.parse(res)
-        if (data.code == 1){
-          item.isSuccess = true  
-          return 
-        }
-        item.isSuccess = false
-        item.isError = true
-        toastr.error(data.message)
-      } 
-    }
+    
   }
 
   //获取问题清单列表

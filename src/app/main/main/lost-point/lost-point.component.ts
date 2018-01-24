@@ -43,6 +43,7 @@ class Params {
 }
 
 class BaseInfo {
+  currentRate? : string;
   currentScore? : string;
   totalScore? : string;
 }
