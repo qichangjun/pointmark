@@ -7,7 +7,7 @@
       <div class="info-side__content--table">
           <div class="content--table__tr">
               <span class="label label-success content--table__tr__td">指标名称:</span>
-              <span>{{baseInfo.quota}}</span>
+              <span>{{baseInfo.name}}</span>
           </div>     
           <div class="content--table__tr">
               <span class="label label-success content--table__tr__td">指标分值:</span>
@@ -31,7 +31,7 @@
           </div> 
           <div class="content--table__tr">
               <span class="label label-success content--table__tr__td">更新时间:</span>
-              <span> {{baseInfo.time}}</span>
+              <span> {{baseInfo.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</span>
           </div>
           <div class="commit--btn--box">
               <button class="btn btn-danger" (click)="updateMission()">确定</button>

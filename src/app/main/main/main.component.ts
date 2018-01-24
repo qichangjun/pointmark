@@ -37,6 +37,10 @@ export class MainComponent implements OnInit {
       　　}
       　　return pwd;
       }   
+    if (this.route.snapshot.children[0].routeConfig.path == 'resolveMission'){    
+      this.router.navigate([], { queryParams: {id:node.data.id,q:randomString(11)} }); //在grade或resolveMission中，点击子节点，改变路由参数    
+      return 
+    }
     if (node.data.nodeType != 'bottom'){ //当点击的非最子节点时，在原路由不动，删除id参数
       this.router.navigate([], { queryParams: {id:'',q:randomString(11)},queryParamsHandling:'merge' });
       return 
@@ -45,7 +49,7 @@ export class MainComponent implements OnInit {
       if (this.route.snapshot.children[0].routeConfig.path == 'homePage' || this.route.snapshot.children[0].routeConfig.path =='lostPoint'){
         this.router.navigate(['main/grade'], { queryParams: {id:node.data.id,q:randomString(11)},queryParamsHandling:'merge' });  
         return   
-      }
+      } 
     }
     this.router.navigate([], { queryParams: {id:node.data.id,q:randomString(11)} }); //在grade或resolveMission中，点击子节点，改变路由参数
   }

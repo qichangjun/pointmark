@@ -15,7 +15,7 @@ import { BaseInfo } from '../grade/grade.class';
 export class ResolveMissionComponent implements OnInit {
   parameter : Params = {}
   baseInfo : BaseInfo = {
-    dutyDept : ''
+    dutyDept : []
   }
   constructor(
     private route: ActivatedRoute,
@@ -37,7 +37,7 @@ export class ResolveMissionComponent implements OnInit {
         if (!res){
           return 
         }        
-        this.baseInfo = res;
+        this.baseInfo = res;      
         return 
       });
   }

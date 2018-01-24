@@ -1,10 +1,10 @@
 <tree-root #tree [nodes]="_nodes" [options]="options">
         <ng-template #treeNodeTemplate let-node let-index="index">
-            <span (click)="go(node)">
+            <div (click)="clickNode(node)">
                     <span *ngIf="node.data.nodeType != 'bottom'" class="glyphicon glyphicon-folder-close tree--icon" aria-hidden="true"></span>
                     <span *ngIf="node.data.nodeType == 'bottom'" class="glyphicon glyphicon-paperclip tree--icon" aria-hidden="true"></span>
                     <span>{{ node.data.name }}</span>
-                    <span *ngFor="let owner of node.data.owner" class="badge">{{owner}}</span>
-            </span>
+                    <span  class="badge">{{node.data.dutyDept}}</span>
+            </div>
         </ng-template>
 </tree-root>

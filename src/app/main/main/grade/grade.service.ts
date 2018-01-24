@@ -51,11 +51,11 @@ export class GradeService {
   }
 
   deleteQuestion(id?) : Promise<any> {
-    let post_data = {id : id}
     let params = new URLSearchParams();
+    params.set('id',id)
     params.set('accessKey',this._AuthService.getCurrentUser().accessKey)
     params.set('accessToken',this._AuthService.getCurrentUser().accessToken)
-    return this.http.post(this._constantService.baseUrl() + this._apiUrlService['deleteQuestion'],post_data,{search:params})
+    return this.http.get(this._constantService.baseUrl() + this._apiUrlService['deleteQuestion'],{search:params})
                     .toPromise()
                     .then(res =>
                       this._ServiceHandleService.extractDataSuccess(res)
@@ -119,7 +119,7 @@ export class GradeService {
 
   deleteSource(id)  : Promise<any> {
     let params = new URLSearchParams();
-    params.set('id','111')
+    params.set('id',id)
     params.set('accessKey',this._AuthService.getCurrentUser().accessKey)
     params.set('accessToken',this._AuthService.getCurrentUser().accessToken)
     return this.http.get(this._constantService.baseUrl() + this._apiUrlService['deleteSource'],{search:params})
@@ -134,12 +134,14 @@ export class GradeService {
 
   addSource(id,parameter)  : Promise<any> {
     let params = new URLSearchParams();
-    params.set('quotaId',id)
-    params.set('score',parameter.score)
-    params.set('description',parameter.description)
+    let post_data = {
+      quotaId : id,
+      score : parameter.score,
+      description : parameter.description
+    }
     params.set('accessKey',this._AuthService.getCurrentUser().accessKey)
     params.set('accessToken',this._AuthService.getCurrentUser().accessToken)
-    return this.http.get(this._constantService.baseUrl() + this._apiUrlService['addSource'],{search:params})
+    return this.http.post(this._constantService.baseUrl() + this._apiUrlService['addSource'],post_data,{search:params})
                     .toPromise()
                     .then(res =>
                       this._ServiceHandleService.extractDataSuccess(res)
@@ -166,7 +168,7 @@ export class GradeService {
 
   deleteFile(id) : Promise<any> {
     let params = new URLSearchParams();
-    params.set('id','1111')
+    params.set('id',id)
     params.set('accessKey',this._AuthService.getCurrentUser().accessKey)
     params.set('accessToken',this._AuthService.getCurrentUser().accessToken)
     return this.http.get(this._constantService.baseUrl() + this._apiUrlService['deleteFile'],{search:params})

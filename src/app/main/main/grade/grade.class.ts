@@ -4,7 +4,7 @@ export class Params {
   }
   
 export  class BaseInfo {
-    dutyDept? : string;
+    dutyDept? : any;
     evalutionMethod? : string;
     id? : string;
     name? : string;

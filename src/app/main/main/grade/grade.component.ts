@@ -18,7 +18,7 @@ declare var toastr:any;
 @Component({
   selector: 'app-grade',
   templateUrl: './grade.component.html',
-  styleUrls: ['./grade.component.css'],
+  styleUrls: ['./grade.component.scss'],
   providers:[GradeService],
   animations: [
     trigger('toggleExpand',  [
@@ -67,7 +67,7 @@ export class GradeComponent implements OnInit,AfterViewInit {
     this.uploader = new FileUploader({autoUpload:true,url: this._constantService.baseUrl() + this._apiUrlService.upload,
       additionalParameter: {
         accessToken : this._AuthService.getCurrentUser().accessToken,
-        accessUser : this._AuthService.getCurrentUser().accessKey
+        accessKey : this._AuthService.getCurrentUser().accessKey
       }});
     this.route.queryParams
       .switchMap(async (params : Params) => {          

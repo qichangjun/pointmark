@@ -66,7 +66,8 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
     }
   }
 
-  go(node){
+  clickNode(node){
+    node.expand()
     this.changeNode.emit(node)
   }
 }

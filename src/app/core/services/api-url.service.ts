@@ -16,10 +16,11 @@ export class ApiUrlService {
 
   getFileList = '/file/list';
   deleteFile = '/scoreRecord/delete';
-  upload = 'upload';
+  upload = '/file/save';
 
-  scoreReduceDetailList = '/scoreReduceDetail/list';
+  scoreReduceDetailList = '/quota/scoreReduceDetail/list';
 
   getTreeInfo = '/quota/treeList';
   register = '/user/register';
+  download = '/fileData/download'
 }

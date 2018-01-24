@@ -29,7 +29,7 @@ export class LostPointComponent implements OnInit {
         return this.lostPointService.getList(this.parameter.keywords)
       })
       .subscribe(res => {
-        this.rows = res.scoreReduces; 
+        this.rows = res.scoreReduceItems; 
         this.baseInfo = {
           currentScore : res.currentScore,
           totalScore : res.totalScore

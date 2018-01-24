@@ -8,7 +8,7 @@
           <tr>
               <td class="description">
                   <div class="description--content">
-                      {{baseInfo.name}}
+                      {{baseInfo.requirements}}
                   </div>
               </td>
               <td class="rate">
@@ -86,7 +86,7 @@
                 <tr *ngFor="let source of sourceList">
                     <td>{{source.score}}</td>
                     <td>{{source.description}}</td>
-                    <td>{{source.time}}</td>
+                    <td>{{source.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</td>
                     <td>
                         <a (click)="deleteSource(source)">
                             删除
@@ -127,7 +127,7 @@
                 </tr>
                 <tr *ngFor="let file of fileList">
                         <td>{{file.fileName}}</td>
-                        <td>{{file.time}}</td>
+                        <td>{{file.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</td>
                         <td>
                             <a (click)="deleteFile(file)">
                                 删除

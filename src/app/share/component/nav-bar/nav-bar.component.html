@@ -5,7 +5,11 @@
       <li role="presentation" routerLinkActive="active"> <a [routerLink]="['/main/grade']" >自评打分&材料上传</a></li>
       <li role="presentation" routerLinkActive="active"> <a [routerLink]="['/main/lostPoint']" >查看失分项</a></li>
       <li role="presentation" routerLinkActive="active"> <a [routerLink]="['/main/resolveMission']" >分解工作任务</a></li>
-      <li role="presentation" > <a href="javascript:void(0)" >打包下载所有材料</a></li>
+      <li role="presentation" > <a 
+        target="_blank"
+        [href]="_constantService.baseUrl() + _apiUrlService.download + '?accessToken=' + this._AuthService.getCurrentUser().accessToken + '&accessKey=' + this._AuthService.getCurrentUser().accessKey"
+         >打包下载所有材料</a></li>
+
       <li role="presentation" routerLinkActive="active" class="pull-right"><a [routerLink]="['/login']" >登出</a></li>
     </ul>
   </div>
