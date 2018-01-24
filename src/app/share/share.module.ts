@@ -6,21 +6,36 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PointTreeComponent } from './component/point-tree/point-tree.component';
 import { TreeModule } from 'angular-tree-component';
-import { DateFormatPipe } from './pipe/date-format.pipe'
+import { DateFormatPipe } from './pipe/date-format.pipe';
+import { AddNodeDialogComponent } from './component/point-tree/dialog/add-node-dialog.component'
+import { MatButtonModule,
+  MatDialogModule,MatDialogConfig,MatFormFieldModule,
+  MatSelectModule,  
+  MatMenuModule
+} from '@angular/material';
 @NgModule({
   imports: [
     RouterModule,
     CommonModule,
     FormsModule,ReactiveFormsModule,
     TreeModule,
-    HttpModule
+    HttpModule,
+    MatButtonModule,
+    MatDialogModule,MatFormFieldModule,
+    MatSelectModule,  
+    MatMenuModule
   ],
   exports:[
     CommonModule,
     HttpModule,
     FormsModule,ReactiveFormsModule,
-    NavBarComponent,PointTreeComponent,DateFormatPipe
+    NavBarComponent,PointTreeComponent,DateFormatPipe,
+    MatButtonModule,
+    MatDialogModule,MatFormFieldModule,
+    MatSelectModule,  
+    MatMenuModule
   ],
-  declarations: [NavBarComponent, PointTreeComponent,DateFormatPipe]
+  declarations: [NavBarComponent, PointTreeComponent,DateFormatPipe,AddNodeDialogComponent],
+  entryComponents:[AddNodeDialogComponent]
 })
 export class ShareModule {}

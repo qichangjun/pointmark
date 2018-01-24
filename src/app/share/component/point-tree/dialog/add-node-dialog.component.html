@@ -1,0 +1,50 @@
+<form style="width: 500px;" (ngSubmit)="addNodeForm.form.valid && addNode()" #addNodeForm="ngForm">
+        <h2 mat-dialog-title>添加节点</h2>
+        <mat-dialog-content>          
+            <div class="form-group">
+                <label for="name">指标名称</label>
+                <input #name="ngModel" type="text"
+                [(ngModel)]="baseInfo.name"
+                [required]="true" name="name"   
+                class="form-control" >
+              </div>
+              <div class="form-group">
+                <label for="rate">指标分值</label>
+                <input #rate="ngModel" type="text" 
+                [required]="true" name="rate"
+                [(ngModel)]="baseInfo.rate" class="form-control">
+              </div>  
+              <div class="form-group">
+                  <label for="requirements">指标要求</label>
+                  <input #requirements="ngModel" type="text" 
+                  [required]="true" name="requirements"
+                  [(ngModel)]="baseInfo.requirements" class="form-control">
+              </div>  
+              <div class="form-group">
+                  <label for="evalutionMethod">评估方式</label>
+                  <input #evalutionMethod="ngModel" type="text" 
+                  [required]="true" name="evalutionMethod"
+                  [(ngModel)]="baseInfo.evalutionMethod" class="form-control">
+              </div>  
+              <div class="form-group">
+                  <label for="dutyDept">责任处室</label>
+                  <input #dutyDept="ngModel" type="text" 
+                  [required]="true" name="dutyDept"
+                  [(ngModel)]="baseInfo.dutyDept" class="form-control">
+              </div>  
+              <div class="form-group">
+                  <label for="dutyDept">工作分解</label>
+                  <textarea [(ngModel)]="baseInfo.workResolve" 
+                  class="form-control" 
+                  name="workResolve"
+                   id="workResolve"  rows="3"></textarea>             
+              </div> 
+        </mat-dialog-content>
+        <mat-dialog-actions>
+          <button type="submit"  mat-raised-button >确定</button>
+          <button type="button"  mat-raised-button (click)="cancel()">取消</button>
+        </mat-dialog-actions>
+</form>
+
+
+

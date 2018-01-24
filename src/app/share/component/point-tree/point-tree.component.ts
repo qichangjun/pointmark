@@ -1,6 +1,10 @@
 import { Component, OnInit,Output,EventEmitter,ViewChild,AfterViewInit,Input,OnChanges } from '@angular/core';
 import { TreeNode } from 'angular-tree-component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog, MatDialogRef,MatDialogConfig } from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material';
+import { AddNodeDialogComponent } from './dialog/add-node-dialog.component';
+
 @Component({
   selector: 'app-point-tree',
   templateUrl: './point-tree.component.html',
@@ -38,6 +42,7 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
 
   parameter : Params = {}
   constructor(
+    private dialog: MatDialog,
     private route: ActivatedRoute,
     private router: Router
   ) {
@@ -72,6 +77,19 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
     if (node.parent){
       this.expandNode(node.parent)
     }
+  }
+
+  addNode(node){
+    let config = new MatDialogConfig();
+    config.data = {
+      node : node
+    }
+    let dialogRef = this.dialog.open(AddNodeDialogComponent,config);
+    dialogRef.afterClosed().subscribe((res) =>{
+      if (res){
+        return 
+      }
+    })
   }
 }
 
