@@ -1,7 +1,40 @@
 .navbar--wrap {
-  background: #ffffff;
+  background: #444;
   border-bottom: none;
-  margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-bottom: 0; }
+  .navbar--wrap .container {
+    height: 50px;
+    padding: 0; }
+    .navbar--wrap .container .nav-pills {
+      height: 100%; }
+      .navbar--wrap .container .nav-pills li {
+        height: 100%; }
+        .navbar--wrap .container .nav-pills li a {
+          height: 100%;
+          line-height: 30px;
+          border: none;
+          color: #ffffff;
+          border-radius: 0; }
+          .navbar--wrap .container .nav-pills li a:hover {
+            background: #0099da; }
+  .navbar--wrap .nav-pills > li.active > a, .navbar--wrap .nav-pills > li.active > a:focus, .navbar--wrap .nav-pills > li.active > a:hover {
+    background: #0099da;
+    color: #fff;
+    border-radius: 0; }
+
+.user--drop--menu a {
+  line-height: normal;
+  padding: 0; }
+  .user--drop--menu a:hover {
+    line-height: normal;
+    padding: 0; }
+  .user--drop--menu a i {
+    background-color: transparent;
+    height: 51px;
+    margin-top: -1px;
+    color: #fff;
+    vertical-align: middle;
+    font-size: 1.5em;
+    padding: 15px 14px 14px 14px; }
 
 /*# sourceMappingURL=nav-bar.component.css.map */
