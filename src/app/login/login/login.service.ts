@@ -42,4 +42,16 @@ export class LoginService {
                       this._ServiceHandleService.handleError(error)
                     );
   }
+
+  resetPassword(paramete ?) : Promise<any> {    
+    let post_data = paramete
+    return this.http.post(this._constantService.baseUrl() + this._apiUrlService['resetPassword'],post_data)
+                    .toPromise()
+                    .then(res =>
+                      this._ServiceHandleService.extractDataSuccess(res)
+                    )
+                    .catch(error =>
+                      this._ServiceHandleService.handleError(error)
+                    );
+  }
 }

@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   async login(){
     let res = await this.loginService.login(this.loginInfo)    
     Cookies.set('current_user_token', 
-      {accessKey:res.accessKey,accessToken:res.accessToken},
+      {accessKey:res.accessKey,accessToken:res.accessToken,userName:this.loginInfo.userName},
       {expires:365 })    
     this.router.navigate(['/main']);
   }
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 }
 
 //登陆信息,用户名，密码必填
-class LoginInfo{
+export class LoginInfo{
   userName : string;
   password : string;
 }

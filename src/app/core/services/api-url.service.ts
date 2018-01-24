@@ -22,5 +22,6 @@ export class ApiUrlService {
 
   getTreeInfo = '/quota/treeList';
   register = '/user/register';
-  download = '/fileData/download'
+  download = '/fileData/download';
+  resetPassword = '/user/resetPassword'
 }
