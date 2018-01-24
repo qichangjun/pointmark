@@ -8,6 +8,7 @@ import { AuthService } from './services/auth.service';
 import { ConstantService } from './services/constant.service';
 import { ServiceHandleService } from './services/service-handle.service';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { updateTreeService } from './services/behavior.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   declarations: [],
-  providers:[AuthGuard,ApiUrlService,AuthService,ConstantService,ServiceHandleService]
+  providers:[AuthGuard,ApiUrlService,AuthService,ConstantService,ServiceHandleService,updateTreeService]
 })
 export class CoreModule { 
   constructor (@Optional() @SkipSelf() parentModule: CoreModule) {

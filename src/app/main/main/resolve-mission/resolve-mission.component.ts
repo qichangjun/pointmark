@@ -5,6 +5,7 @@ import 'rxjs/add/operator/switchMap';
 import { ResolveMissionService } from './resolve-mission.service';
 import { GradeService } from '../grade/grade.service'
 import { BaseInfo } from '../grade/grade.class';
+import { updateTreeService } from '../../../core/services/behavior.service';
 
 @Component({
   selector: 'app-resolve-mission',
@@ -15,13 +16,14 @@ import { BaseInfo } from '../grade/grade.class';
 export class ResolveMissionComponent implements OnInit {
   parameter : Params = {}
   baseInfo : BaseInfo = {
-    dutyDept : []
+    
   }
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private resolveMissionService : ResolveMissionService,
-    private gradeService : GradeService
+    private gradeService : GradeService,
+    public _updateTreeService : updateTreeService
   ) { }
 
   ngOnInit() {
@@ -40,10 +42,11 @@ export class ResolveMissionComponent implements OnInit {
         this.baseInfo = res;      
         return 
       });
-  }
+    }
 
-  updateMission(){
-    
+  async updateMission(){
+    await this.resolveMissionService.updateMission(this.baseInfo)
+    this._updateTreeService.toggleEvent({update:true})
   }
 }
 

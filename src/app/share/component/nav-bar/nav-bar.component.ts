@@ -25,7 +25,7 @@ export class NavBarComponent implements OnInit {
     public _LoginService : LoginService
   ) {
 
-   }
+  }
 
   ngOnInit() {
     this.loginInfo.userName = this._AuthService.getCurrentUser().userName

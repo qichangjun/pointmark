@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from './main.service';
+import { updateTreeService } from '../../core/services/behavior.service';
 
 @Component({
   selector: 'app-main',
@@ -11,14 +12,21 @@ import { MainService } from './main.service';
 export class MainComponent implements OnInit {  
   point : number = 71.45
   nodes = [];
+  updateTreeEvent : any;
   constructor(
     private router: Router,
     private route : ActivatedRoute,
-    private mainService : MainService
+    private mainService : MainService,
+    public _updateTreeService : updateTreeService
   ) {}
   
   ngOnInit() {
     this.getTreeInfo()
+    this.updateTreeEvent = this._updateTreeService.toggleEvent$.subscribe(info =>{
+      if (info && info.update){
+        this.getTreeInfo()
+      }
+    })
   }
 
   async getTreeInfo(){
