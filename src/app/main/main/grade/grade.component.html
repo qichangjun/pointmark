@@ -84,7 +84,7 @@
                     <th></th>
                     <th></th>
                 </tr>
-                <tr *ngFor="let source of sourceList">
+                <tr *ngFor="let source of sourceList;let i = index;">
                   <td>
                     {{i + 1}}
                   </td>
@@ -130,7 +130,7 @@
                     <th>提交时间</th>
                     <th></th>
                 </tr>
-                <tr *ngFor="let file of fileList">
+                <tr *ngFor="let file of fileList;let i = index;">
                         <td>
                           {{i + 1}}
                         </td>

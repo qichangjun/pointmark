@@ -32,7 +32,7 @@
                         <th>分值</th>
                         <th>自评时间</th>
                     </tr>
-                    <tr *ngFor="let row of rows">
+                    <tr *ngFor="let row of rows;let i = index;">
                         <td>
                           {{i + 1}}
                         </td>

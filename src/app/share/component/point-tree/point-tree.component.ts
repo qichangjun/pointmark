@@ -4,7 +4,7 @@ import { ActivatedRoute, Router,NavigationEnd } from '@angular/router';
 import { MatDialog, MatDialogRef,MatDialogConfig } from '@angular/material';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { AddNodeDialogComponent } from './dialog/add-node-dialog.component';
-
+import { updateTreeService } from '../../../core/services/behavior.service';
 @Component({
   selector: 'app-point-tree',
   templateUrl: './point-tree.component.html',
@@ -33,19 +33,19 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
   isResolveMissionPath : boolean = false
   options = {levelPadding:0,animateExpand:true,childrenField:'childList',actionMapping:{
     mouse:{
-      click:(tree,node,$event)=>{
-        console.log(node)
+      click:(tree,node,$event)=>{       
         node.expand()
         this.changeNode.emit(node)
       }
     }
   }}
-
   parameter : Params = {}
+
   constructor(
     private dialog: MatDialog,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public _updateTreeService : updateTreeService
   ) {
     router.events.subscribe(e =>{
       if (e instanceof NavigationEnd) {
@@ -96,6 +96,7 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
     let dialogRef = this.dialog.open(AddNodeDialogComponent,config);
     dialogRef.afterClosed().subscribe((res) =>{
       if (res){
+        this._updateTreeService.toggleEvent({update:true})
         return 
       }
     })
