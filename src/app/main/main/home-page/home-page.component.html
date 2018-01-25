@@ -6,30 +6,36 @@
         <div class="info-side__content--table">
             <div class="content--table__tr">
                 <span class="label label-success content--table__tr__td">更新时间:</span>
-                <span> 2017-12-19</span>
+                <span>  {{baseInfo.scoreTime | dateFormat : 'YYYY-MM-DD'}}</span>
             </div>
 
             <div class="content--table__tr">
                 <span class="label label-success content--table__tr__td">自评得分:</span>
-                <span> 71.45</span>
+                <span> {{baseInfo.score}}</span>
             </div>
 
             <div class="content--table__tr">
                 <span class="label label-success content--table__tr__td">总结材料:</span>
-                <span> 需要材料清单: 1.自检报告；2.自检表</span>
+                <span> {{baseInfo.workResolve}}</span>
             </div>
 
             <div class="content--table__tr align--top">
                 <span class="label label-success content--table__tr__td">材料上传:</span>
                 <table class="table content--table__tr__table">
-                    <tr>
-                        <th>材料名称</th>
-                        <th>提交时间</th>
-                    </tr>
-                    <tr>
-                        <td>111.pdf</td>
-                        <td>2017-6-30</td>
-                    </tr>
+                        <tr>
+                            <th>材料名称</th>
+                            <th>提交时间</th>
+                            <th></th>
+                        </tr>
+                        <tr *ngFor="let file of fileList">
+                                <td>{{file.fileName}}</td>
+                                <td>{{file.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</td>
+                                <td>
+                                    <a (click)="deleteFile(file)">
+                                        删除
+                                    </a>
+                                </td>
+                            </tr>
                 </table>
 
             </div>
@@ -39,45 +45,45 @@
                 </a>
             </p>
             <div [@toggleExpand]="isOpenFileForm">
-                <a style="height:30px;width:100%" class="mat-menu-item__button a-upload" >
-                    <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
-                </a>
-                <table class="table" *ngIf="uploader">
-                    <tr>
-                        <th>文件名</th>
-                        <th>状态</th>
-                        <th></th>
-                    </tr>
-                    <tr *ngFor="let file of uploader.queue">
-                        <td>{{file._file.name}}</td>
-                        <td>
-                            <span *ngIf="file.isError" class="fa fa-exclamation-circle status--prompt--icon" style="color: #cd624c">错误</span>
-                            <span *ngIf="file.isSuccess" class="fa fa-check-circle status--prompt--icon" style="color: #56DA90">成功</span>
-                    <span *ngIf="file.isUploading">
-                    {{file.progress}}%
-                    </span>
-                    <span *ngIf="file.isReady && !file.isUploading">
-                        排队中
-                    </span>
-                        </td>
-                        <td>
-                            <div [hidden]="file.isSuccess">
-                                <button type="button" class="btn btn-success btn-xs"
-                                        (click)="file.upload()" [disabled]="file.isReady || file.isUploading || file.isSuccess">
-                                    <span class="glyphicon glyphicon-upload"></span>上传
-                                </button>
-                                <button type="button" class="btn btn-warning btn-xs"
-                                        (click)="file.cancel()" [disabled]="!file.isUploading">
-                                    <span class="glyphicon glyphicon-ban-circle"></span> 取消
-                                </button>
-                                <button type="button" class="btn btn-danger btn-xs"
-                                        (click)="file.remove()">
-                                    <span class="glyphicon glyphicon-trash"></span> 删除
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                    <a style="height:30px;width:100%" class="mat-menu-item__button a-upload" >
+                            <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
+                        </a>
+                        <table class="table" *ngIf="uploader">
+                            <tr>
+                                <th>文件名</th>
+                                <th>状态</th>
+                                <th></th>
+                            </tr>
+                            <tr *ngFor="let file of uploader.queue">
+                                <td>{{file._file.name}}</td>
+                                <td>
+                                    <span *ngIf="file.isError" class="fa fa-exclamation-circle status--prompt--icon" style="color: #cd624c">错误</span>
+                                    <span *ngIf="file.isSuccess" class="fa fa-check-circle status--prompt--icon" style="color: #56DA90">成功</span>
+                                            <span *ngIf="file.isUploading">
+                                            {{file.progress}}%
+                                            </span>
+                                            <span *ngIf="file.isReady && !file.isUploading">
+                                                排队中
+                                            </span>
+                                </td>
+                                <td>
+                                    <div [hidden]="file.isSuccess">
+                                        <button type="button" class="btn btn-success btn-xs"
+                                                (click)="file.upload()" [disabled]="file.isReady || file.isUploading || file.isSuccess">
+                                            <span class="glyphicon glyphicon-upload"></span>上传
+                                        </button>
+                                        <button type="button" class="btn btn-warning btn-xs"
+                                                (click)="file.cancel()" [disabled]="!file.isUploading">
+                                            <span class="glyphicon glyphicon-ban-circle"></span> 取消
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-xs"
+                                                (click)="file.remove()">
+                                            <span class="glyphicon glyphicon-trash"></span> 删除
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
             </div>
         </div>
     </div>

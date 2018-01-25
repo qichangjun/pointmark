@@ -31,7 +31,7 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
   };
   _nodes = [];
   isResolveMissionPath : boolean = false
-  options = {animateExpand:true,childrenField:'childList',actionMapping:{
+  options = {levelPadding:20,animateExpand:true,childrenField:'childList',actionMapping:{
     mouse:{
       click:(tree,node,$event)=>{
         node.expand()
