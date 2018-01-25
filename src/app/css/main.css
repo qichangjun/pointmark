@@ -93,6 +93,8 @@ a {
         margin-bottom: 0; }
         .info-side__content--box .info-side__content--table .content--table__tr .content--table__tr__table tr th {
           border-top: none; }
+        .info-side__content--box .info-side__content--table .content--table__tr .content--table__tr__table .th--of--tr {
+          border-bottom: 1px solid #dddddd; }
       .info-side__content--box .info-side__content--table .content--table__tr .no--data {
         text-align: center;
         padding: 40px; }
