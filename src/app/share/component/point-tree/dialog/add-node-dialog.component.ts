@@ -22,8 +22,7 @@ export class AddNodeDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<AddNodeDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }  
-  ngOnInit() {
-      console.log(this.data.node.data.id)
+  ngOnInit() {      
   }
 
   cancel(){

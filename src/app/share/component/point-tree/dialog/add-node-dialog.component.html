@@ -7,41 +7,54 @@
                 [(ngModel)]="baseInfo.name"
                 [required]="true" name="name"   
                 class="form-control" >
-              </div>
+                <div>
+                    <span style="color:red" *ngIf="addNodeForm.submitted && !name.valid">请填写指标名称</span>
+                </div> 
+            </div>
+              
               <div class="form-group">
                 <label for="rate">指标分值</label>
-                <input #rate="ngModel" type="text" 
+                <input #rate="ngModel" type="number" 
                 [required]="true" name="rate"
                 [(ngModel)]="baseInfo.rate" class="form-control">
+                <div>
+                    <span style="color:red" *ngIf="addNodeForm.submitted && !rate.valid">请填写指标分值</span>
+                </div> 
               </div>  
               <div class="form-group">
                     <label for="ratingDetails">评分细节	</label>
                     <input #ratingDetails="ngModel" type="text" 
-                    [required]="true" name="ratingDetails"
+                    name="ratingDetails"
                     [(ngModel)]="baseInfo.ratingDetails" class="form-control">
-                  </div>  
+                </div>  
               <div class="form-group">
                   <label for="requirements">指标要求</label>
                   <input #requirements="ngModel" type="text" 
                   [required]="true" name="requirements"
                   [(ngModel)]="baseInfo.requirements" class="form-control">
+                  <div>
+                        <span style="color:red" *ngIf="addNodeForm.submitted && !requirements.valid">请填写指标要求</span>
+                    </div> 
               </div>  
               <div class="form-group">
                   <label for="evalutionMethod">评估方式</label>
                   <input #evalutionMethod="ngModel" type="text" 
                   [required]="true" name="evalutionMethod"
                   [(ngModel)]="baseInfo.evalutionMethod" class="form-control">
+                  <div>
+                        <span style="color:red" *ngIf="addNodeForm.submitted && !evalutionMethod.valid">请填写评估方式</span>
+                    </div> 
               </div>  
               <div class="form-group">
                   <label for="dutyDept">责任处室</label>
                   <input #dutyDept="ngModel" type="text" 
-                  [required]="true" name="dutyDept"
+                  name="dutyDept"
                   [(ngModel)]="baseInfo.dutyDept" class="form-control">
               </div>  
               <div class="form-group">
                     <label for="proveFileName">证明材料名称	</label>
                     <input #proveFileName="ngModel" type="text" 
-                    [required]="true" name="proveFileName"
+                   name="proveFileName"
                     [(ngModel)]="baseInfo.proveFileName" class="form-control">
                 </div>  
               
