@@ -6,7 +6,7 @@
             class="node-wrapper"
             [class.node-content-wrapper-active]="node.isActive"
             [class.node-content-wrapper-focused]="node.isFocused"
-              (click)="node.mouseAction('click', $event)" class="tree--node--box">
+            (click)="node.mouseAction('click', $event)" class="tree--node--box">
                <div [style.padding-left]="node.level * 10 + 'px'">
                   <tree-node-expander (click)="$event.stopPropagation()" [node]="node"></tree-node-expander>
                   <span *ngIf="node.data.nodeType != 'bottom'" class="glyphicon glyphicon-folder-close tree--icon" aria-hidden="true"></span>
@@ -15,7 +15,7 @@
                   <span  class="badge pull-right" style="margin-right: 5px;margin-top: 2px;" *ngIf="!isResolveMissionPath">{{node.data.dutyDept}}</span>
                   <a *ngIf="node.data.nodeType != 'bottom' && isResolveMissionPath" (click)="addNode(node)" class="fa fa-plus-circle add--node"></a>
                </div>
-
+               
             </div>
 
 

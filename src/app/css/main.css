@@ -160,8 +160,7 @@ a {
     background: #eeeeee; }
 
 .tree-node-focused {
-  background: #428bca;
-  color: #ffffff; }
+  }
   .tree-node-focused .node-wrapper:hover {
     background: transparent; }
 
@@ -191,4 +190,8 @@ a {
 .value--box .mat-radio-button.mat-accent .mat-radio-inner-circle {
   background-color: #428bca; }
 
+.node-content-wrapper-focused{
+  background: #428bca;
+  color: #ffffff;
+}
 /*# sourceMappingURL=main.css.map */
