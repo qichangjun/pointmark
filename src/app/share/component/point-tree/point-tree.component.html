@@ -1,5 +1,6 @@
-<div class="tree--node--wrap" style="background: transparent;padding-left: 10px">
+<div class="tree--node--wrap" style="padding-left: 10px;padding-right: 10px;">
 <tree-root #tree [nodes]="_nodes" [options]="options">
+
         <ng-template #treeNodeWrapperTemplate let-node let-index="index">
             <div
             class="node-wrapper"
@@ -14,7 +15,7 @@
                   <span  class="badge" *ngIf="!isResolveMissionPath">{{node.data.dutyDept}}</span>
                   <a *ngIf="node.data.nodeType != 'bottom' && isResolveMissionPath" (click)="addNode(node)" class="fa fa-plus-circle add--node"></a>
                </div>
-             
+
             </div>
 
 

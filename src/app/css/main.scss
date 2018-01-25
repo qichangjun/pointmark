@@ -111,6 +111,10 @@ a{
           }
         }
       }
+      .no--data{
+        text-align: center;
+        padding: 40px;
+      }
     }
     .commit--btn--box{
       display: flex;
@@ -155,13 +159,45 @@ a{
 .node-content-wrapper{
   padding-left: 10px !important;
   &:hover{
-    background: transparent;
+    background: none;
     box-shadow: none;
   }
 }
+.node-content-wrapper-active, .node-content-wrapper-focused, .node-content-wrapper:hover {
+  box-shadow: none;
+  background: none;
+}
 .node-wrapper{
+  padding-top: 5px;
+  padding-bottom: 5px;
   &:hover{
     background: #eeeeee;
   }
 }
+.tree-node-focused{
+  background: #428bca;
+  color: #ffffff;
+  .node-wrapper:hover{
+    background: transparent;
+  }
+}
 
+.toggle-children-wrapper{
+  //background-image: none;
+  font: normal normal normal 14px/1 FontAwesome;
+  :before {
+    content: "\f107";
+    font-size: 20px;
+    position: relative;
+    top: -1px;
+  }
+}
+.toggle-children{
+  background-image: none;
+}
+.toggle-children-wrapper-expanded .toggle-children{
+  transform: rotate(270deg);
+  position: relative;
+  left: -4px;
+  top: 7px;
+}
