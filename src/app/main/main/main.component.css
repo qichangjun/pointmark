@@ -25,6 +25,7 @@
   height: 100%;
   float: left;
   padding-right: 0;
+  padding-left: 0;
   background-color: #f9f9f9;
   border: solid 1px #eee;
   border-left: 3px solid #ddd; }
@@ -36,7 +37,7 @@
     background-color: #f3f3f3; }
     .tree-side .page-header .head--title {
       margin: 0;
-      font-size: 20px;
+      font-size: 18px;
       color: #444; }
 
 .tree-container {
@@ -53,12 +54,12 @@
   border-bottom: solid 1px #ddd;
   background-color: #f9f9f9; }
   .object--head--wrapper .jumbotron {
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 20px;
     margin-bottom: 10px; }
     @media screen and (min-width: 768px) {
       .object--head--wrapper .jumbotron {
-        padding-top: 20px;
+        padding-top: 30px;
         padding-bottom: 20px; } }
     .object--head--wrapper .jumbotron.object--head--box {
       padding-right: 15px;
@@ -68,7 +69,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: transparent; }
+      background: transparent;
+      font-size: 30px; }
+      .object--head--wrapper .jumbotron.object--head--box .object--head--box__title {
+        font-size: 30px; }
+      .object--head--wrapper .jumbotron.object--head--box .object--head--box__score {
+        font-size: 30px; }
       @media (min-width: 768px) {
         .object--head--wrapper .jumbotron.object--head--box {
           width: 750px; } }

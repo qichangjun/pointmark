@@ -30,6 +30,7 @@
     height: 100%;
     float: left;
   padding-right: 0;
+  padding-left: 0;
     //margin-right: 3%;
     //border: 1px solid #3479b6;
     //border-radius: 3px;
@@ -40,13 +41,14 @@
         margin: 0;
         padding: 10px 15px 10px 10px;
         //background: #3479b6;
-        margin-left: -18px;
+        margin-left: -3px;
         //margin-right: -15px;
         border-left: solid 3px #333;
         background-color: #f3f3f3;
         .head--title{
             margin: 0;
-            font-size: 20px;
+            //font-size: 20px;
+            font-size: 18px;
             color: #444;
         }
     }
@@ -70,11 +72,11 @@
   border-bottom: solid 1px #ddd;
   background-color: #f9f9f9;
   .jumbotron{
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 20px;
     margin-bottom: 10px;
     @media screen and (min-width: 768px){
-      padding-top: 20px;
+      padding-top: 30px;
       padding-bottom: 20px;
   }
     &.object--head--box{
@@ -86,6 +88,13 @@
       justify-content: space-between;
       align-items: center;
       background: transparent;
+      font-size: 30px;
+      .object--head--box__title{
+        font-size: 30px;
+      }
+      .object--head--box__score{
+        font-size: 30px;
+      }
       @media (min-width: 768px){
         width: 750px;
       }

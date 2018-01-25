@@ -36,7 +36,8 @@ a{
 .info-side__wrapper{
   height: 100%;
   .info-side__header--title{
-    font-size: 21px;
+    //font-size: 21px;
+    font-size: 18px;
     //background: #3379b7;
     border-bottom: solid 1px #0099da;
     margin: 0;
@@ -151,9 +152,12 @@ a{
   vertical-align: middle;
   width: 10px;
 }
-.node-content-wrapper:hover{
-  background: transparent;
-  box-shadow: none;
+.node-content-wrapper{
+  padding-left: 10px !important;
+  &:hover{
+    background: transparent;
+    box-shadow: none;
+  }
 }
 .node-wrapper{
   &:hover{

@@ -14,7 +14,8 @@
           line-height: 30px;
           border: none;
           color: #ffffff;
-          border-radius: 0; }
+          border-radius: 0;
+          font-size: 18px; }
           .navbar--wrap .container .nav-pills li a:hover {
             background: #0099da; }
   .navbar--wrap .nav-pills > li.active > a, .navbar--wrap .nav-pills > li.active > a:focus, .navbar--wrap .nav-pills > li.active > a:hover {

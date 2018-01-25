@@ -40,7 +40,7 @@ a {
 .info-side__wrapper {
   height: 100%; }
   .info-side__wrapper .info-side__header--title {
-    font-size: 21px;
+    font-size: 18px;
     border-bottom: solid 1px #0099da;
     margin: 0;
     padding: 10px 15px;
@@ -125,9 +125,11 @@ a {
   vertical-align: middle;
   width: 10px; }
 
-.node-content-wrapper:hover {
-  background: transparent;
-  box-shadow: none; }
+.node-content-wrapper {
+  padding-left: 10px !important; }
+  .node-content-wrapper:hover {
+    background: transparent;
+    box-shadow: none; }
 
 .node-wrapper:hover {
   background: #eeeeee; }

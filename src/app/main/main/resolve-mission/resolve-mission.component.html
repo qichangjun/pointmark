@@ -6,31 +6,31 @@
     <div  *ngIf="this.parameter.id" class="info-side__content--box">
       <div class="info-side__content--table">
           <div class="content--table__tr">
-              <span class="label label-success content--table__tr__td">指标名称:</span>
+              <h4><span class="label label-success content--table__tr__td">指标名称:</span></h4>
               <span>{{baseInfo.name}}</span>
           </div>
           <div class="content--table__tr">
-              <span class="label label-success content--table__tr__td">指标分值:</span>
+              <h4><span class="label label-success content--table__tr__td">指标分值:</span></h4>
               <span>{{baseInfo.rate}}分</span>
-          </div>   
+          </div>
           <div class="content--table__tr">
-              <span class="label label-success content--table__tr__td">指标要求:</span>
+              <h4><span class="label label-success content--table__tr__td">指标要求:</span></h4>
               <span> {{baseInfo.requirements}}</span>
-          </div>     
+          </div>
           <div class="content--table__tr">
-              <span class="label label-success content--table__tr__td">评估方式:</span>
+              <h4><span class="label label-success content--table__tr__td">评估方式:</span></h4>
               <span> {{baseInfo.evalutionMethod}}</span>
-          </div> 
+          </div>
           <div class="content--table__tr">
-              <span class="label label-success content--table__tr__td">责任处室:</span>
+              <h4><span class="label label-success content--table__tr__td">责任处室:</span></h4>
               <input [(ngModel)]="baseInfo.dutyDept" type="text" class="form-control" id="dutyDept" >
-          </div> 
+          </div>
           <div class="content--table__tr align--top">
-              <span class="label label-success content--table__tr__td ">工作分解:</span>
-              <textarea [(ngModel)]="baseInfo.workResolve" class="form-control" name="workResolve" id="workResolve"  rows="3"></textarea>             
-          </div> 
+              <h4><span class="label label-success content--table__tr__td ">工作分解:</span></h4>
+              <textarea [(ngModel)]="baseInfo.workResolve" class="form-control" name="workResolve" id="workResolve"  rows="3"></textarea>
+          </div>
           <div class="content--table__tr">
-              <span class="label label-success content--table__tr__td">更新时间:</span>
+              <h4><span class="label label-success content--table__tr__td">更新时间:</span></h4>
               <span> {{baseInfo.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</span>
           </div>
           <div class="commit--btn--box">
@@ -38,6 +38,5 @@
           </div>
       </div>
     </div>
-    
+
   </div>
-  
