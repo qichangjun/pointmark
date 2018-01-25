@@ -37,11 +37,11 @@ a {
 .info-side__wrapper {
   height: 100%; }
   .info-side__wrapper .info-side__header--title {
-    font-size: 20px;
-    background: #3379b7;
+    font-size: 21px;
+    border-bottom: solid 1px #0099da;
     margin: 0;
     padding: 10px 15px;
-    color: #ffffff; }
+    color: #444; }
 
 .info-side__content--box {
   height: calc(100% - 45px);
@@ -99,6 +99,17 @@ a {
   margin-bottom: 5px; }
   .open--question--form--drop .well__textarea {
     margin-bottom: 10px; }
+
+.no--choose--node--box {
+  padding: 45px 0;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 16px; }
+  .no--choose--node--box:before {
+    content: "\f06a";
+    color: #eabe1f;
+    font-size: 18px;
+    vertical-align: middle;
+    padding-right: 5px; }
 
 .toggle-children-wrapper {
   display: inline-block;

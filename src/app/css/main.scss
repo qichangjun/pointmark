@@ -32,11 +32,12 @@ a{
 .info-side__wrapper{
   height: 100%;
   .info-side__header--title{
-    font-size: 20px;
-    background: #3379b7;
+    font-size: 21px;
+    //background: #3379b7;
+    border-bottom: solid 1px #0099da;
     margin: 0;
     padding: 10px 15px;
-    color: #ffffff;
+    color: #444;
 
   }
 }
@@ -117,6 +118,18 @@ a{
     }
   }
 }
+.no--choose--node--box{
+  padding: 45px 0;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 16px;
+  &:before {
+    content: "\f06a";
+    color: #eabe1f;
+    font-size: 18px;
+    vertical-align: middle;
+    padding-right: 5px;
+  }
+}
 
 //tree
 .toggle-children-wrapper{
@@ -125,4 +138,5 @@ a{
   vertical-align: middle;
   width: 10px;
 }
+
 
