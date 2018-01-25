@@ -6,29 +6,32 @@
         <div class="info-side__content--table">
             <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">更新时间:</span></h4>
-                <span>  {{baseInfo.scoreTime | dateFormat : 'YYYY-MM-DD'}}</span>
+                <span class="home--value--content">  {{baseInfo.scoreTime | dateFormat : 'YYYY-MM-DD'}}</span>
             </div>
 
             <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">自评得分:</span></h4>
-                <span> {{baseInfo.score}}</span>
+                <span class="home--value--content"> {{baseInfo.score}}</span>
             </div>
 
             <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">总结材料:</span></h4>
-                <span> {{baseInfo.workResolve}}</span>
-
+                <span class="home--value--content"> {{baseInfo.workResolve}}</span>
             </div>
 
             <div class="content--table__tr align--top">
                 <h4><span class="label label-success content--table__tr__td">材料上传:</span></h4>
                 <table class="table content--table__tr__table">
                         <tr>
+                          <th>#</th>
                             <th>材料名称</th>
                             <th>提交时间</th>
                             <th></th>
                         </tr>
                         <tr *ngFor="let file of fileList">
+                          <td>
+                            {{i + 1}}
+                          </td>
                                 <td>{{file.fileName}}</td>
                                 <td>{{file.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</td>
                                 <td>
@@ -45,12 +48,15 @@
                     {{isOpenFileForm ? '收起' : '新增'}}
                 </a>
             </p>
-            <div [@toggleExpand]="isOpenFileForm">
-                    <a style="height:30px;width:100%" class="mat-menu-item__button a-upload" >
+            <div [@toggleExpand]="isOpenFileForm" class="grade--upload--wrapper">
+                    <div><b>上传认证材料</b></div>
+                    <div>请规范上传文件名称</div>
+                    <a class="mat-menu-item__button a-upload" >
                             <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
                         </a>
                         <table class="table" *ngIf="uploader">
                             <tr>
+
                                 <th>文件名</th>
                                 <th>状态</th>
                                 <th></th>

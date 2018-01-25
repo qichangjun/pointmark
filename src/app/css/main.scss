@@ -115,6 +115,10 @@ a{
         text-align: center;
         padding: 40px;
       }
+      .home--value--content{
+        font-size: 20px;
+        font-weight: bold;
+      }
     }
     .commit--btn--box{
       display: flex;
@@ -147,6 +151,12 @@ a{
     vertical-align: middle;
     padding-right: 5px;
   }
+}
+
+
+//上传
+.grade--upload--wrapper{
+  padding: 0 0 0 25px;
 }
 
 //tree

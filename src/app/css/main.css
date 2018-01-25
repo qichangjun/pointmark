@@ -96,6 +96,9 @@ a {
       .info-side__content--box .info-side__content--table .content--table__tr .no--data {
         text-align: center;
         padding: 40px; }
+      .info-side__content--box .info-side__content--table .content--table__tr .home--value--content {
+        font-size: 20px;
+        font-weight: bold; }
     .info-side__content--box .info-side__content--table .commit--btn--box {
       display: flex;
       justify-content: center;
@@ -120,6 +123,9 @@ a {
     font-size: 18px;
     vertical-align: middle;
     padding-right: 5px; }
+
+.grade--upload--wrapper {
+  padding: 0 0 0 25px; }
 
 .toggle-children-wrapper {
   display: inline-block;
