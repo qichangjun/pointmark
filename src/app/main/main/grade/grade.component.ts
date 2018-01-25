@@ -106,6 +106,7 @@ export class GradeComponent implements OnInit,AfterViewInit {
         this.getQuestionList();
         this.getSorceRecordList();
         this.getFileList();
+        this.uploader.clearQueue()
       });  
   }
 
