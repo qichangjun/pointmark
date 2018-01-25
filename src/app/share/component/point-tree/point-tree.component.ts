@@ -31,9 +31,10 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
   };
   _nodes = [];
   isResolveMissionPath : boolean = false
-  options = {levelPadding:20,animateExpand:true,childrenField:'childList',actionMapping:{
+  options = {levelPadding:0,animateExpand:true,childrenField:'childList',actionMapping:{
     mouse:{
       click:(tree,node,$event)=>{
+        console.log(node)
         node.expand()
         this.changeNode.emit(node)
       }
@@ -53,7 +54,6 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
         }else{
           this.isResolveMissionPath = false
         }
-        console.log(this.isResolveMissionPath);
     } 
     })
    }

@@ -25,4 +25,6 @@ export class ApiUrlService {
   download = '/file/download';
   resetPassword = '/user/resetPassword';
   updateMission = '/quota/update';
+
+  addNode = '/quota/save'
 }

@@ -15,6 +15,12 @@
                 [(ngModel)]="baseInfo.rate" class="form-control">
               </div>  
               <div class="form-group">
+                    <label for="ratingDetails">评分细节	</label>
+                    <input #ratingDetails="ngModel" type="text" 
+                    [required]="true" name="ratingDetails"
+                    [(ngModel)]="baseInfo.ratingDetails" class="form-control">
+                  </div>  
+              <div class="form-group">
                   <label for="requirements">指标要求</label>
                   <input #requirements="ngModel" type="text" 
                   [required]="true" name="requirements"
@@ -33,12 +39,20 @@
                   [(ngModel)]="baseInfo.dutyDept" class="form-control">
               </div>  
               <div class="form-group">
+                    <label for="proveFileName">证明材料名称	</label>
+                    <input #proveFileName="ngModel" type="text" 
+                    [required]="true" name="proveFileName"
+                    [(ngModel)]="baseInfo.proveFileName" class="form-control">
+                </div>  
+              
+              <div class="form-group">
                   <label for="dutyDept">工作分解</label>
-                  <textarea [(ngModel)]="baseInfo.worksResolve" 
+                  <textarea [(ngModel)]="baseInfo.workResolve" 
                   class="form-control" 
                   name="workResolve"
                    id="workResolve"  rows="3"></textarea>             
               </div> 
+              
               <div class="form-group">
                 <label >节点类型</label>
                 <mat-radio-group name="nodeType" [(ngModel)]="baseInfo.nodeType">                    

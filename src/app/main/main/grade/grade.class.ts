@@ -14,8 +14,8 @@ export  class BaseInfo {
     ratingDetails? : string;
     requirements? : string;
     time? : string;
-    worksResolve? : string;
-    nodeType? : string;
+    workResolve? : string;
+    nodeType? : string;    
   }
   
 export  class QuestionList {

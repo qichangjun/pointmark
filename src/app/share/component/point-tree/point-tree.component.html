@@ -1,14 +1,20 @@
 <div class="tree--node--wrap" style="background: transparent;padding-left: 10px">
 <tree-root #tree [nodes]="_nodes" [options]="options">
-
-        <ng-template #treeNodeTemplate let-node let-index="index">
-
-            <div (click)="node.mouseAction('click', $event)" class="tree--node--box">
-              <span *ngIf="node.data.nodeType != 'bottom'" class="glyphicon glyphicon-folder-close tree--icon" aria-hidden="true"></span>
-              <span *ngIf="node.data.nodeType == 'bottom'" class="glyphicon glyphicon-paperclip tree--icon" aria-hidden="true"></span>
-              <span>{{ node.data.name }}</span>
-              <span  class="badge" *ngIf="!isResolveMissionPath">{{node.data.dutyDept}}</span>
-              <a *ngIf="node.data.nodeType != 'bottom' && isResolveMissionPath" (click)="addNode(node)" class="fa fa-plus-circle add--node"></a>
+        <ng-template #treeNodeWrapperTemplate let-node let-index="index">
+            <div
+            class="node-wrapper"
+            [class.node-content-wrapper-active]="node.isActive"
+            [class.node-content-wrapper-focused]="node.isFocused"
+              (click)="node.mouseAction('click', $event)" class="tree--node--box">
+               <div [style.padding-left]="node.level * 10 + 'px'">
+                  <tree-node-expander (click)="$event.stopPropagation()" [node]="node"></tree-node-expander>
+                  <span *ngIf="node.data.nodeType != 'bottom'" class="glyphicon glyphicon-folder-close tree--icon" aria-hidden="true"></span>
+                  <span *ngIf="node.data.nodeType == 'bottom'" class="glyphicon glyphicon-paperclip tree--icon" aria-hidden="true"></span>
+                  <span>{{ node.data.name }}</span>
+                  <span  class="badge" *ngIf="!isResolveMissionPath">{{node.data.dutyDept}}</span>
+                  <a *ngIf="node.data.nodeType != 'bottom' && isResolveMissionPath" (click)="addNode(node)" class="fa fa-plus-circle add--node"></a>
+               </div>
+             
             </div>
 
 
