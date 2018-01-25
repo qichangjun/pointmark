@@ -159,10 +159,8 @@ a {
   .node-wrapper:hover {
     background: #eeeeee; }
 
-.tree-node-focused {
-  }
-  .tree-node-focused .node-wrapper:hover {
-    background: transparent; }
+.tree-node-focused .node-wrapper:hover {
+  background: transparent; }
 
 .toggle-children-wrapper {
   font: normal normal normal 14px/1 FontAwesome; }
@@ -183,6 +181,12 @@ a {
   padding-top: 5px;
   padding-bottom: 5px; }
 
+.node-content-wrapper-focused {
+  background: #428bca;
+  color: #ffffff; }
+  .node-content-wrapper-focused:hover .add--node {
+    color: #ffffff !important; }
+
 .value--box .mat-radio-label {
   font-weight: normal; }
 .value--box .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
@@ -190,8 +194,4 @@ a {
 .value--box .mat-radio-button.mat-accent .mat-radio-inner-circle {
   background-color: #428bca; }
 
-.node-content-wrapper-focused{
-  background: #428bca;
-  color: #ffffff;
-}
 /*# sourceMappingURL=main.css.map */

@@ -7,7 +7,7 @@
                 [(ngModel)]="baseInfo.name"
                 [required]="true" name="name"
                 class="form-control value--box__content" >
-                <div>
+                <div class="required--prompt--box">
                     <span style="color:red" *ngIf="addNodeForm.submitted && !name.valid">请填写指标名称</span>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                 <input #rate="ngModel" type="number"
                 [required]="true" name="rate"
                 [(ngModel)]="baseInfo.rate" class="form-control value--box__content">
-                <div>
+                <div class="required--prompt--box">
                     <span style="color:red" *ngIf="addNodeForm.submitted && !rate.valid">请填写指标分值</span>
                 </div>
               </div>
@@ -32,7 +32,7 @@
                   <input #requirements="ngModel" type="text"
                   [required]="true" name="requirements"
                   [(ngModel)]="baseInfo.requirements" class="form-control value--box__content">
-                  <div>
+                  <div class="required--prompt--box">
                         <span style="color:red" *ngIf="addNodeForm.submitted && !requirements.valid">请填写指标要求</span>
                     </div>
               </div>
@@ -41,7 +41,7 @@
                   <input #evalutionMethod="ngModel" type="text"
                   [required]="true" name="evalutionMethod"
                   [(ngModel)]="baseInfo.evalutionMethod" class="form-control value--box__content">
-                  <div>
+                  <div class="required--prompt--box">
                         <span style="color:red" *ngIf="addNodeForm.submitted && !evalutionMethod.valid">请填写评估方式</span>
                     </div>
               </div>
@@ -66,7 +66,7 @@
                    id="workResolve"  rows="3"></textarea>
               </div>
 
-              <div class="form-group value--box radio--button--box">
+              <div class="form-group value--box">
                 <label class="value--box__name">节点类型</label>
                 <mat-radio-group name="nodeType" [(ngModel)]="baseInfo.nodeType" class="value--box__content radio--button">
                     <mat-radio-button value="">文件夹</mat-radio-button>

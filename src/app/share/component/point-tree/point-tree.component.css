@@ -6,7 +6,8 @@
 .tree--node--box:hover .add--node {
   display: inline-block;
   color: #5cb85c;
-  text-decoration: none; }
+  text-decoration: none;
+  margin-left: 5px; }
 
 .tree--node--wrap {
   padding-left: 10px;

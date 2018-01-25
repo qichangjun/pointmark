@@ -1,23 +1,36 @@
 @charset "utf-8";
 .add--node--modal--warpper{
   .value--box{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 60px;
+    //display: flex;
+    //justify-content: space-between;
+    padding: 0 0 0 60px;
+    margin-bottom: 20px;
+    //align-items: center;
+    position: relative;
     .value--box__name{
-      width: 120px;
+      //width: 120px;
       font-weight: normal;
+      display: inline-block;
+      vertical-align: middle;
+      width: 90px;
     }
     .value--box__content{
+      display: inline-block;
+      vertical-align: middle;
+      width: 300px;
       &.radio--button{
       }
     }
 
     &.radio--button--box{
-      justify-content: flex-start;
+      //justify-content: flex-start;
       .value--box__name{
-        width: 90px;
+        //width: 90px;
       }
     }
   }
+}
+.required--prompt--box{
+  position: absolute;
+  left: 257px;
 }

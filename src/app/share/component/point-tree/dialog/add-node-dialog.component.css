@@ -1,13 +1,19 @@
 .add--node--modal--warpper .value--box {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 60px; }
+  padding: 0 0 0 60px;
+  margin-bottom: 20px;
+  position: relative; }
   .add--node--modal--warpper .value--box .value--box__name {
-    width: 120px;
-    font-weight: normal; }
-  .add--node--modal--warpper .value--box.radio--button--box {
-    justify-content: flex-start; }
-    .add--node--modal--warpper .value--box.radio--button--box .value--box__name {
-      width: 90px; }
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    width: 90px; }
+  .add--node--modal--warpper .value--box .value--box__content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px; }
+
+.required--prompt--box {
+  position: absolute;
+  left: 257px; }
 
 /*# sourceMappingURL=add-node-dialog.component.css.map */

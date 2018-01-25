@@ -201,7 +201,7 @@ a{
     background: #eeeeee;
   }
 }
-.tree-node-focused{ 
+.tree-node-focused{
   .node-wrapper:hover{
     background: transparent;
   }
@@ -228,6 +228,15 @@ a{
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.node-content-wrapper-focused{
+  background: #428bca;
+  color: #ffffff;
+  &:hover{
+    .add--node{
+      color: #ffffff !important;
+    }
+  }
+}
 
 //add node
 .value--box{
@@ -241,7 +250,4 @@ a{
     background-color: #428bca;
   }
 }
-.node-content-wrapper-focused{
-  background: #428bca;
-  color: #ffffff;
-} 
+
