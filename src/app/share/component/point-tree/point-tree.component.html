@@ -1,11 +1,11 @@
 <tree-root #tree [nodes]="_nodes" [options]="options">
         <ng-template #treeNodeTemplate let-node let-index="index">
-            <div (click)="node.mouseAction('click', $event)" >
+            <div (click)="node.mouseAction('click', $event)" class="tree--node--box">
                     <span *ngIf="node.data.nodeType != 'bottom'" class="glyphicon glyphicon-folder-close tree--icon" aria-hidden="true"></span>
                     <span *ngIf="node.data.nodeType == 'bottom'" class="glyphicon glyphicon-paperclip tree--icon" aria-hidden="true"></span>
                     <span>{{ node.data.name }}</span>
                     <span  class="badge">{{node.data.dutyDept}}</span>
-                    <a *ngIf="node.data.nodeType != 'bottom'" (click)="addNode(node)">添加节点</a>
+                    <a *ngIf="node.data.nodeType != 'bottom'" (click)="addNode(node)" class="fa fa-plus-circle add--node"></a>
             </div>
         </ng-template>
 </tree-root>

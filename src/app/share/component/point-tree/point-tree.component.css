@@ -1,4 +1,11 @@
 .tree--icon {
   width: 18px; }
 
+.tree--node--box .add--node {
+  display: none; }
+.tree--node--box:hover .add--node {
+  display: inline-block;
+  color: #3eb190;
+  text-decoration: none; }
+
 /*# sourceMappingURL=point-tree.component.css.map */
