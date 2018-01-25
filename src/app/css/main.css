@@ -136,6 +136,8 @@ a {
   margin-bottom: 0 !important; }
   .upload--content--table__tr__table tr th {
     border-top: none !important; }
+  .upload--content--table__tr__table .th--of--tr {
+    border-bottom: 1px solid #dddddd; }
 
 .toggle-children-wrapper {
   display: inline-block;
