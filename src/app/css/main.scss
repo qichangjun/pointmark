@@ -53,7 +53,7 @@ a{
   &.grade--component{
     overflow-y: hidden;
     .info-side__content--table{
-      height: calc(100% - 42px);
+      height: calc(100% - 62px);
       overflow-y: auto;
     }
   }
@@ -67,7 +67,7 @@ a{
     .description{
       border-bottom: 1px solid #eeeeee;
       padding: 0 10px;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: bold;
       .description--content{
         margin: 10px 0;
@@ -78,7 +78,7 @@ a{
       white-space: nowrap;
       padding-left: 10px;
       .rate--content{
-        font-size: 18px;
+        font-size: 30px;
         font-weight: bold;
       }
     }
@@ -100,7 +100,7 @@ a{
       .content--table__tr__td{
         margin-right: 20px;
         margin-left: 10px;
-        padding: 5px 10px;
+        //padding: 5px 10px;
       }
       .content--table__tr__table{
         width: calc(100% - 110px);
@@ -186,7 +186,7 @@ a{
   //background-image: none;
   font: normal normal normal 14px/1 FontAwesome;
   :before {
-    content: "\f107";
+    content: "\f105";
     font-size: 20px;
     position: relative;
     top: -1px;
@@ -196,8 +196,10 @@ a{
   background-image: none;
 }
 .toggle-children-wrapper-expanded .toggle-children{
-  transform: rotate(270deg);
   position: relative;
-  left: -4px;
   top: 7px;
+}
+.tree--node--box{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

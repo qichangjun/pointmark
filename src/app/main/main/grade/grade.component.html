@@ -48,15 +48,18 @@
                             完成
                         </span>
                     </td>
-                    <td>{{question.questionDes}}
-                        <a (click)="deleteQuestion(question.id)">删除</a>
+                    <td>
+                        <div style="display:flex;justify-content: space-between;align-items: center">
+                            <span>{{question.questionDes}}</span>
+                            <a (click)="deleteQuestion(question.id)" title="删除" ><i style="color: #d9534f;" class="fa fa-times-circle"></i></a>
+                        </div>
                     </td>
                     <td>
                         {{question.commitTime | dateFormat : 'YYYY-MM-DD'}}
                     </td>
                     <td>
                         {{question.time | dateFormat : 'YYYY-MM-DD'}}
-                        <a *ngIf="question.questionStatus==0" (click)="updateQuestion(question.id,1)">完成</a>
+                        <a *ngIf="question.questionStatus==0" (click)="updateQuestion(question.id,1)"  title="完成"><i style="color: #5cb85c;" class="fa fa-check-circle"></i></a>
                     </td>
                 </tr>
             </table>
@@ -92,8 +95,8 @@
                     <td>{{source.description}}</td>
                     <td>{{source.time | dateFormat : 'YYYY-MM-DD'}}</td>
                     <td>
-                        <a (click)="deleteSource(source)">
-                            删除
+                        <a (click)="deleteSource(source)" title="删除">
+                            <i style="color: #d9534f;" class="fa fa-times-circle"></i>
                         </a>
                     </td>
                 </tr>
@@ -150,7 +153,7 @@
             </a>
         </p>
         <div [@toggleExpand]="isOpenFileForm" class="">
-            <a style="height:30px;width:100%" class="mat-menu-item__button a-upload" >
+            <a class="mat-menu-item__button a-upload upload--btn" >
                 <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
             </a>
             <table class="table" *ngIf="uploader">

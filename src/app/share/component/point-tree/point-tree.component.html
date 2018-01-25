@@ -11,8 +11,8 @@
                   <tree-node-expander (click)="$event.stopPropagation()" [node]="node"></tree-node-expander>
                   <span *ngIf="node.data.nodeType != 'bottom'" class="glyphicon glyphicon-folder-close tree--icon" aria-hidden="true"></span>
                   <span *ngIf="node.data.nodeType == 'bottom'" class="glyphicon glyphicon-paperclip tree--icon" aria-hidden="true"></span>
-                  <span>{{ node.data.name }}</span>
-                  <span  class="badge" *ngIf="!isResolveMissionPath">{{node.data.dutyDept}}</span>
+                   <span>{{ node.data.name }}</span>
+                  <span  class="badge pull-right" style="margin-right: 5px" *ngIf="!isResolveMissionPath">{{node.data.dutyDept}}</span>
                   <a *ngIf="node.data.nodeType != 'bottom' && isResolveMissionPath" (click)="addNode(node)" class="fa fa-plus-circle add--node"></a>
                </div>
 
