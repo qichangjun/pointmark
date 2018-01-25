@@ -153,14 +153,14 @@
             </a>
         </p>
         <div [@toggleExpand]="isOpenFileForm" class="grade--upload--wrapper">
-            <div><b>上传认证材料</b></div>
-            <div>请规范上传文件名称</div>
+            <p><b>上传认证材料</b></p>
+            <p>请规范上传文件名称</p>
             <a class="mat-menu-item__button a-upload upload--btn" >
                 <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
             </a>
-            <table class="table" *ngIf="uploader">
+            <table class="table upload--content--table__tr__table" *ngIf="uploader">
                 <tr>
-                    <th width="60">文件名</th>
+                    <th>文件名</th>
                     <th>状态</th>
                     <th></th>
                 </tr>

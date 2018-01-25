@@ -8,4 +8,9 @@
   color: #5cb85c;
   text-decoration: none; }
 
+.tree--node--wrap {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #428bca; }
+
 /*# sourceMappingURL=point-tree.component.css.map */

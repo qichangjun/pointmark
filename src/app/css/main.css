@@ -99,6 +99,8 @@ a {
       .info-side__content--box .info-side__content--table .content--table__tr .home--value--content {
         font-size: 20px;
         font-weight: bold; }
+      .info-side__content--box .info-side__content--table .content--table__tr .resolve--mission--value--content {
+        font-size: 18px; }
     .info-side__content--box .info-side__content--table .commit--btn--box {
       display: flex;
       justify-content: center;
@@ -125,7 +127,13 @@ a {
     padding-right: 5px; }
 
 .grade--upload--wrapper {
-  padding: 0 0 0 25px; }
+  padding: 0 0 0 118px; }
+
+.upload--content--table__tr__table {
+  width: calc(100% - 110px);
+  margin-bottom: 0 !important; }
+  .upload--content--table__tr__table tr th {
+    border-top: none !important; }
 
 .toggle-children-wrapper {
   display: inline-block;
@@ -173,5 +181,12 @@ a {
 .tree--node--box {
   padding-top: 5px;
   padding-bottom: 5px; }
+
+.value--box .mat-radio-label {
+  font-weight: normal; }
+.value--box .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #428bca; }
+.value--box .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #428bca; }
 
 /*# sourceMappingURL=main.css.map */

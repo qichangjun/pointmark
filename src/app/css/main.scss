@@ -111,6 +111,7 @@ a{
           }
         }
       }
+
       .no--data{
         text-align: center;
         padding: 40px;
@@ -118,6 +119,9 @@ a{
       .home--value--content{
         font-size: 20px;
         font-weight: bold;
+      }
+      .resolve--mission--value--content{
+        font-size: 18px;
       }
     }
     .commit--btn--box{
@@ -156,7 +160,17 @@ a{
 
 //上传
 .grade--upload--wrapper{
-  padding: 0 0 0 25px;
+  //padding: 0 0 0 25px;
+  padding: 0 0 0 118px;
+}
+.upload--content--table__tr__table{
+  width: calc(100% - 110px);
+  margin-bottom: 0 !important;
+  tr{
+    th{
+      border-top: none !important;
+    }
+  }
 }
 
 //tree
@@ -212,4 +226,18 @@ a{
 .tree--node--box{
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+
+//add node
+.value--box{
+  .mat-radio-label{
+    font-weight: normal;
+  }
+  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+    border-color: #428bca;
+  }
+  .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #428bca;
+  }
 }
