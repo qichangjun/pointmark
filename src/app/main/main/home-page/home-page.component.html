@@ -27,8 +27,8 @@
                             <th>材料名称</th>
                             <th>提交时间</th>
                             <th></th>
-                        </tr>
-                        <tr *ngFor="let file of fileList">
+                        </tr> 
+                        <tr *ngFor="let file of fileList;let i = index;">
                           <td>
                             {{i + 1}}
                           </td>
