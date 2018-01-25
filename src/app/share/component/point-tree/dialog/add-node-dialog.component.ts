@@ -13,7 +13,9 @@ import { AddNodeService } from './add-node-dialog.service';
   providers: [AddNodeService]
 })
 export class AddNodeDialogComponent implements OnInit {
-  baseInfo : BaseInfo = {}
+  baseInfo : BaseInfo = {
+    nodeType : ""
+  }
   constructor(
     private _addNodeService : AddNodeService,
     private dialog: MatDialog,

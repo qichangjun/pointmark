@@ -15,6 +15,7 @@ export  class BaseInfo {
     requirements? : string;
     time? : string;
     worksResolve? : string;
+    nodeType? : string;
   }
   
 export  class QuestionList {

@@ -1,6 +1,6 @@
 import { Component, OnInit,Output,EventEmitter,ViewChild,AfterViewInit,Input,OnChanges } from '@angular/core';
 import { TreeNode } from 'angular-tree-component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router,NavigationEnd } from '@angular/router';
 import { MatDialog, MatDialogRef,MatDialogConfig } from '@angular/material';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { AddNodeDialogComponent } from './dialog/add-node-dialog.component';
@@ -30,7 +30,7 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
     })
   };
   _nodes = [];
-  
+  isResolveMissionPath : boolean = false
   options = {animateExpand:true,childrenField:'childList',actionMapping:{
     mouse:{
       click:(tree,node,$event)=>{
@@ -46,7 +46,16 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
     private route: ActivatedRoute,
     private router: Router
   ) {
-
+    router.events.subscribe(e =>{
+      if (e instanceof NavigationEnd) {
+        if (e.url.indexOf('resolveMission') != -1){
+          this.isResolveMissionPath = true
+        }else{
+          this.isResolveMissionPath = false
+        }
+        console.log(this.isResolveMissionPath);
+    } 
+    })
    }
 
   ngOnInit(){

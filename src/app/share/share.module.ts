@@ -11,7 +11,7 @@ import { AddNodeDialogComponent } from './component/point-tree/dialog/add-node-d
 import { MatButtonModule,
   MatDialogModule,MatDialogConfig,MatFormFieldModule,
   MatSelectModule,  
-  MatMenuModule
+  MatMenuModule,MatRadioModule
 } from '@angular/material';
 @NgModule({
   imports: [
@@ -23,7 +23,7 @@ import { MatButtonModule,
     MatButtonModule,
     MatDialogModule,MatFormFieldModule,
     MatSelectModule,  
-    MatMenuModule
+    MatMenuModule,MatRadioModule
   ],
   exports:[
     CommonModule,
@@ -32,7 +32,7 @@ import { MatButtonModule,
     NavBarComponent,PointTreeComponent,DateFormatPipe,
     MatButtonModule,
     MatDialogModule,MatFormFieldModule,
-    MatSelectModule,  
+    MatSelectModule,  MatRadioModule,
     MatMenuModule
   ],
   declarations: [NavBarComponent, PointTreeComponent,DateFormatPipe,AddNodeDialogComponent],
