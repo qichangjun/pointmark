@@ -36,4 +36,20 @@ export class AddNodeService {
                       this._ServiceHandleService.handleError(error)
                     );
   }
+
+  deleteNode(id) : Promise<any> {    
+  
+    let params = new URLSearchParams();
+    params.set('id',id)
+    params.set('accessKey',this._AuthService.getCurrentUser().accessKey)
+    params.set('accessToken',this._AuthService.getCurrentUser().accessToken)
+    return this.http.get(this._constantService.baseUrl() + this._apiUrlService['deleteNode'],{search : params})
+                    .toPromise()
+                    .then(res =>
+                      this._ServiceHandleService.extractDataSuccess(res)
+                    )
+                    .catch(error =>
+                      this._ServiceHandleService.handleError(error)
+                    );
+  }
 }

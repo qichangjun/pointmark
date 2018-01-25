@@ -1,0 +1,15 @@
+<form style="width: 500px;" (ngSubmit)="addNodeForm.form.valid && deleteNode()" #addNodeForm="ngForm" class="add--node--modal--warpper">
+        <h2 mat-dialog-title>添加节点</h2>
+        <mat-dialog-content>
+           <span>确定要删除节点 <strong>{{data.node.data.name}}</strong> 吗?</span>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+          <div style="width: 100%;text-align: right;padding: 20px 0 15px 0;">
+            <button type="button" class="btn btn-default"  (click)="cancel()">取消</button>
+            <button type="submit" class="btn btn-success"   >确定</button>
+          </div>
+        </mat-dialog-actions>
+</form>
+
+
+

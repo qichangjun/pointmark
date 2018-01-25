@@ -5,6 +5,8 @@ import { MatDialog, MatDialogRef,MatDialogConfig } from '@angular/material';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { AddNodeDialogComponent } from './dialog/add-node-dialog.component';
 import { updateTreeService } from '../../../core/services/behavior.service';
+import { DeleteNodeDialogComponent } from './dialog/delete-node-dialog.component';
+
 @Component({
   selector: 'app-point-tree',
   templateUrl: './point-tree.component.html',
@@ -94,6 +96,20 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
       node : node
     }
     let dialogRef = this.dialog.open(AddNodeDialogComponent,config);
+    dialogRef.afterClosed().subscribe((res) =>{
+      if (res){
+        this._updateTreeService.toggleEvent({update:true})
+        return 
+      }
+    })
+  }
+
+  deleteNode(node){
+    let config = new MatDialogConfig();
+    config.data = {
+      node : node
+    }
+    let dialogRef = this.dialog.open(DeleteNodeDialogComponent,config);
     dialogRef.afterClosed().subscribe((res) =>{
       if (res){
         this._updateTreeService.toggleEvent({update:true})

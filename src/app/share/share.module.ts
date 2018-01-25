@@ -8,6 +8,8 @@ import { PointTreeComponent } from './component/point-tree/point-tree.component'
 import { TreeModule } from 'angular-tree-component';
 import { DateFormatPipe } from './pipe/date-format.pipe';
 import { AddNodeDialogComponent } from './component/point-tree/dialog/add-node-dialog.component'
+import { DeleteNodeDialogComponent } from './component/point-tree/dialog/delete-node-dialog.component';
+
 import { MatButtonModule,
   MatDialogModule,MatDialogConfig,MatFormFieldModule,
   MatSelectModule,  
@@ -35,7 +37,7 @@ import { MatButtonModule,
     MatSelectModule,  MatRadioModule,
     MatMenuModule
   ],
-  declarations: [NavBarComponent, PointTreeComponent,DateFormatPipe,AddNodeDialogComponent],
-  entryComponents:[AddNodeDialogComponent]
+  declarations: [NavBarComponent, PointTreeComponent,DateFormatPipe,AddNodeDialogComponent,DeleteNodeDialogComponent],
+  entryComponents:[AddNodeDialogComponent,DeleteNodeDialogComponent]
 })
 export class ShareModule {}

@@ -26,5 +26,6 @@ export class ApiUrlService {
   resetPassword = '/user/resetPassword';
   updateMission = '/quota/update';
 
-  addNode = '/quota/save'
+  addNode = '/quota/save';
+  deleteNode = '/quota/delete'
 }
