@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  // baseUrl : 'http://' + 'demo.docworks.cn/' + 'reviewapi'
-  baseUrl : 'http://' + '192.168.0.153:8080' + ''
+   baseUrl : 'http://' + 'demo.docworks.cn/' + 'reviewapi'
+  //baseUrl : 'http://' + '192.168.0.153:8080' + ''
 };

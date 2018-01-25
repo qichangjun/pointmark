@@ -16,7 +16,7 @@ declare var toastr:any;
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'],
+  styleUrls: ['./home-page.component.scss'],
   animations: [
     trigger('toggleExpand',  [
       state('0', style({
