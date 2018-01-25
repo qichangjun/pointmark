@@ -9,10 +9,12 @@
         target="_blank"
         [href]="_constantService.baseUrl() + _apiUrlService.download + '?accessToken=' + this._AuthService.getCurrentUser().accessToken + '&accessKey=' + this._AuthService.getCurrentUser().accessKey"
          >打包下载所有材料</a></li>
-      <li role="presentation" class="pull-right user--drop--menu"><a href=""><i class="fa fa-bars"></i></a></li>
-      
-      <li role="presentation" routerLinkActive="active" class="pull-right"><a [routerLink]="['/login']" >登出</a></li>
-      <li role="presentation" class="pull-right"><a data-toggle="modal" data-target="#resetPassword" >重置密码</a></li>
+      <li [matMenuTriggerFor]="menu" role="presentation" class="pull-right user--drop--menu"><a ><i class="fa fa-bars"></i></a></li>
+   
+      <mat-menu #menu="matMenu">            
+          <li mat-menu-item role="presentation"><a data-toggle="modal" data-target="#resetPassword" >重置密码</a></li>        
+          <li mat-menu-item role="presentation" routerLinkActive="active" ><a [routerLink]="['/login']" >登出</a></li>       
+      </mat-menu>            
     </ul>
   </div>
 </nav>
