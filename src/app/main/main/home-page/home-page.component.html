@@ -11,7 +11,7 @@
 
             <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">自评得分:</span></h4>
-                <span class="home--value--content"> {{baseInfo.score}}</span>
+                <span class="home--value--content"> {{baseInfo.score}}分</span>
             </div>
 
             <div class="content--table__tr">
@@ -54,14 +54,17 @@
                     <a class="mat-menu-item__button a-upload" >
                             <input class="mat-menu-item__button" type="file" ng2FileSelect [uploader]="uploader" multiple/>
                         </a>
-                        <table class="table" *ngIf="uploader">
-                            <tr>
-
+                        <table class="table upload--content--table__tr__table" *ngIf="uploader">
+                            <tr class="th--of--tr">
+                              <th>#</th>
                                 <th>文件名</th>
                                 <th>状态</th>
                                 <th></th>
                             </tr>
                             <tr *ngFor="let file of uploader.queue">
+                              <td>
+                                {{i + 1}}
+                              </td>
                                 <td>{{file._file.name}}</td>
                                 <td>
                                     <span *ngIf="file.isError" class="fa fa-exclamation-circle status--prompt--icon" style="color: #cd624c">错误</span>
