@@ -23,7 +23,7 @@ export class AddNodeDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }  
   ngOnInit() {
-      console.log(this.data)
+      console.log(this.data.node.data.id)
   }
 
   cancel(){
@@ -31,7 +31,7 @@ export class AddNodeDialogComponent implements OnInit {
   }
 
   async addNode(){
-    await this._addNodeService.addNode(this.baseInfo)
+    await this._addNodeService.addNode(this.data.node.data.id,this.baseInfo)
     this.dialogRef.close(true)
   }
 }

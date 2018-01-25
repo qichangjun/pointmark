@@ -21,8 +21,9 @@ export class AddNodeService {
     private _AuthService : AuthService
   ) { }
 
-  addNode(parameter?) : Promise<any> {    
+  addNode(parentId,parameter?) : Promise<any> {    
     let post_data = parameter
+    post_data.parentId = parentId;
     let params = new URLSearchParams();
     params.set('accessKey',this._AuthService.getCurrentUser().accessKey)
     params.set('accessToken',this._AuthService.getCurrentUser().accessToken)
