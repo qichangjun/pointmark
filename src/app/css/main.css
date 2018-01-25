@@ -150,8 +150,7 @@ a {
     background: #eeeeee; }
 
 .tree-node-focused {
-  background: #428bca;
-  color: #ffffff; }
+  }
   .tree-node-focused .node-wrapper:hover {
     background: transparent; }
 
@@ -174,4 +173,8 @@ a {
   padding-top: 5px;
   padding-bottom: 5px; }
 
+.node-content-wrapper-focused{
+  background: #428bca;
+  color: #ffffff;
+}
 /*# sourceMappingURL=main.css.map */
