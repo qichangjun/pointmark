@@ -94,6 +94,9 @@ a {
         margin-bottom: 0; }
         .info-side__content--box .info-side__content--table .content--table__tr .content--table__tr__table tr th {
           border-top: none; }
+      .info-side__content--box .info-side__content--table .content--table__tr .no--data {
+        text-align: center;
+        padding: 40px; }
     .info-side__content--box .info-side__content--table .commit--btn--box {
       display: flex;
       justify-content: center;
@@ -128,10 +131,40 @@ a {
 .node-content-wrapper {
   padding-left: 10px !important; }
   .node-content-wrapper:hover {
-    background: transparent;
+    background: none;
     box-shadow: none; }
 
-.node-wrapper:hover {
-  background: #eeeeee; }
+.node-content-wrapper-active, .node-content-wrapper-focused, .node-content-wrapper:hover {
+  box-shadow: none;
+  background: none; }
+
+.node-wrapper {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+  .node-wrapper:hover {
+    background: #eeeeee; }
+
+.tree-node-focused {
+  background: #428bca;
+  color: #ffffff; }
+  .tree-node-focused .node-wrapper:hover {
+    background: transparent; }
+
+.toggle-children-wrapper {
+  font: normal normal normal 14px/1 FontAwesome; }
+  .toggle-children-wrapper :before {
+    content: "\f107";
+    font-size: 20px;
+    position: relative;
+    top: -1px; }
+
+.toggle-children {
+  background-image: none; }
+
+.toggle-children-wrapper-expanded .toggle-children {
+  transform: rotate(270deg);
+  position: relative;
+  left: -4px;
+  top: 7px; }
 
 /*# sourceMappingURL=main.css.map */

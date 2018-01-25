@@ -23,10 +23,10 @@
             </div>
             <div class="content--table__tr align--top">
                  <h4><span class="label label-success content--table__tr__td">失分细则:</span></h4>
-                <span [hidden]="rows.length > 0">没有数据</span>
+                <span [hidden]="rows.length > 0" class="no--data">没有数据</span>
                 <table class="table content--table__tr__table" [hidden]="rows.length == 0">
                     <tr>
-                        <th width="60">#</th>
+                        <th width="40">#</th>
                         <th width="420">指标要求</th>
                         <th>自评</th>
                         <th>分值</th>
