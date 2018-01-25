@@ -2,31 +2,39 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from './main.service';
 import { updateTreeService } from '../../core/services/behavior.service';
+import { GradeService } from './grade/grade.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
-  providers:[MainService]
+  providers:[MainService,GradeService]
 })
 export class MainComponent implements OnInit {  
-  point : number = 71.45
   nodes = [];
   updateTreeEvent : any;
+  score : any;
   constructor(
     private router: Router,
     private route : ActivatedRoute,
     private mainService : MainService,
-    public _updateTreeService : updateTreeService
+    public _updateTreeService : updateTreeService,
+    public _gradeService : GradeService
   ) {}
   
   ngOnInit() {
     this.getTreeInfo()
+    this.getBaseInfo()
     this.updateTreeEvent = this._updateTreeService.toggleEvent$.subscribe(info =>{
       if (info && info.update){
         this.getTreeInfo()
       }
     })
+  }
+
+  async getBaseInfo(){
+    let res = await this._gradeService.getBaseInfo(0);
+    this.score = res.score
   }
 
   async getTreeInfo(){
