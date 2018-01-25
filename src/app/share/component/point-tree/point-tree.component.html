@@ -13,11 +13,11 @@
                   <span *ngIf="node.data.nodeType == 'bottom'" class="glyphicon glyphicon-paperclip tree--icon" aria-hidden="true"></span>
                    <span>{{ node.data.name }}</span>
                   <span  class="badge pull-right" style="margin-right: 5px;margin-top: 2px;" *ngIf="!isResolveMissionPath">{{node.data.dutyDept}}</span>
-                  <a *ngIf="node.data.nodeType != 'bottom' && isResolveMissionPath" (click)="addNode(node)" class="fa fa-plus-circle add--node"></a>
+                  <a *ngIf="node.data.nodeType != 'bottom' && isResolveMissionPath" (click)="addNode(node)" title="添加" class="fa fa-plus-circle add--node"></a>
 
-                  <a *ngIf="!node.isRoot && isResolveMissionPath" (click)="deleteNode(node)" class="add--node">删除</a>
+                  <a *ngIf="!node.isRoot && isResolveMissionPath" (click)="deleteNode(node)" title="删除" class="fa fa-times-circle delete--node"></a>
                </div>
-               
+
             </div>
 
 

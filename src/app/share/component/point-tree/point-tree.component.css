@@ -8,6 +8,13 @@
   color: #5cb85c;
   text-decoration: none;
   margin-left: 5px; }
+.tree--node--box:hover .delete--node {
+  display: inline-block;
+  color: #d9534f;
+  text-decoration: none;
+  margin-left: 5px; }
+.tree--node--box .delete--node {
+  display: none; }
 
 .tree--node--wrap {
   padding-left: 10px;

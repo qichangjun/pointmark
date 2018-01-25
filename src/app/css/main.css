@@ -187,6 +187,8 @@ a {
   color: #ffffff; }
   .node-content-wrapper-focused:hover .add--node {
     color: #ffffff !important; }
+  .node-content-wrapper-focused:hover .delete--node {
+    color: #ffffff !important; }
 
 .value--box .mat-radio-label {
   font-weight: normal; }
