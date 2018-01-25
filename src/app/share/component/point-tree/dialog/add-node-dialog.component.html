@@ -1,82 +1,94 @@
-<form style="width: 500px;" (ngSubmit)="addNodeForm.form.valid && addNode()" #addNodeForm="ngForm">
+<form style="width: 500px;" (ngSubmit)="addNodeForm.form.valid && addNode()" #addNodeForm="ngForm" class="add--node--modal--warpper">
         <h2 mat-dialog-title>添加节点</h2>
-        <mat-dialog-content>          
-            <div class="form-group">
-                <label for="name">指标名称</label>
+        <mat-dialog-content>
+            <div class="form-group value--box">
+                <label for="name" class="value--box__name">指标名称</label>
                 <input #name="ngModel" type="text"
                 [(ngModel)]="baseInfo.name"
-                [required]="true" name="name"   
-                class="form-control" >
+                [required]="true" name="name"
+                class="form-control value--box__content" >
                 <div>
                     <span style="color:red" *ngIf="addNodeForm.submitted && !name.valid">请填写指标名称</span>
-                </div> 
+                </div>
             </div>
-              
-              <div class="form-group">
-                <label for="rate">指标分值</label>
-                <input #rate="ngModel" type="number" 
+
+              <div class="form-group value--box">
+                <label for="rate" class="value--box__name">指标分值</label>
+                <input #rate="ngModel" type="number"
                 [required]="true" name="rate"
-                [(ngModel)]="baseInfo.rate" class="form-control">
+                [(ngModel)]="baseInfo.rate" class="form-control value--box__content">
                 <div>
                     <span style="color:red" *ngIf="addNodeForm.submitted && !rate.valid">请填写指标分值</span>
-                </div> 
-              </div>  
-              <div class="form-group">
-                    <label for="ratingDetails">评分细节	</label>
-                    <input #ratingDetails="ngModel" type="text" 
+                </div>
+              </div>
+              <div class="form-group value--box">
+                    <label for="ratingDetails" class="value--box__name">评分细节	</label>
+                    <input #ratingDetails="ngModel" type="text"
                     name="ratingDetails"
-                    [(ngModel)]="baseInfo.ratingDetails" class="form-control">
-                </div>  
-              <div class="form-group">
-                  <label for="requirements">指标要求</label>
-                  <input #requirements="ngModel" type="text" 
+                    [(ngModel)]="baseInfo.ratingDetails" class="form-control value--box__content">
+                </div>
+              <div class="form-group value--box">
+                  <label for="requirements" class="value--box__name">指标要求</label>
+                  <input #requirements="ngModel" type="text"
                   [required]="true" name="requirements"
-                  [(ngModel)]="baseInfo.requirements" class="form-control">
+                  [(ngModel)]="baseInfo.requirements" class="form-control value--box__content">
                   <div>
                         <span style="color:red" *ngIf="addNodeForm.submitted && !requirements.valid">请填写指标要求</span>
-                    </div> 
-              </div>  
-              <div class="form-group">
-                  <label for="evalutionMethod">评估方式</label>
-                  <input #evalutionMethod="ngModel" type="text" 
+                    </div>
+              </div>
+              <div class="form-group value--box">
+                  <label for="evalutionMethod" class="value--box__name">评估方式</label>
+                  <input #evalutionMethod="ngModel" type="text"
                   [required]="true" name="evalutionMethod"
-                  [(ngModel)]="baseInfo.evalutionMethod" class="form-control">
+                  [(ngModel)]="baseInfo.evalutionMethod" class="form-control value--box__content">
                   <div>
                         <span style="color:red" *ngIf="addNodeForm.submitted && !evalutionMethod.valid">请填写评估方式</span>
-                    </div> 
-              </div>  
-              <div class="form-group">
-                  <label for="dutyDept">责任处室</label>
-                  <input #dutyDept="ngModel" type="text" 
+                    </div>
+              </div>
+              <div class="form-group value--box">
+                  <label for="dutyDept" class="value--box__name">责任处室</label>
+                  <input #dutyDept="ngModel" type="text"
                   name="dutyDept"
-                  [(ngModel)]="baseInfo.dutyDept" class="form-control">
-              </div>  
-              <div class="form-group">
-                    <label for="proveFileName">证明材料名称	</label>
-                    <input #proveFileName="ngModel" type="text" 
+                  [(ngModel)]="baseInfo.dutyDept" class="form-control value--box__content">
+              </div>
+              <div class="form-group value--box">
+                    <label for="proveFileName" class="value--box__name">证明材料名称</label>
+                    <input #proveFileName="ngModel" type="text"
                    name="proveFileName"
-                    [(ngModel)]="baseInfo.proveFileName" class="form-control">
-                </div>  
-              
-              <div class="form-group">
-                  <label for="dutyDept">工作分解</label>
-                  <textarea [(ngModel)]="baseInfo.workResolve" 
-                  class="form-control" 
+                    [(ngModel)]="baseInfo.proveFileName" class="form-control value--box__content">
+                </div>
+
+              <div class="form-group value--box">
+                  <label for="dutyDept" class="value--box__name">工作分解</label>
+                  <textarea [(ngModel)]="baseInfo.workResolve"
+                  class="form-control value--box__content"
                   name="workResolve"
+<<<<<<< HEAD
                    id="workResolve"  rows="3"></textarea>             
               </div> 
               
               <div class="form-group">
                 <label >节点类型</label>
                 <mat-radio-group class="primy"name="nodeType" [(ngModel)]="baseInfo.nodeType">                    
+=======
+                   id="workResolve"  rows="3"></textarea>
+              </div>
+
+              <div class="form-group value--box radio--button--box">
+                <label class="value--box__name">节点类型</label>
+                <mat-radio-group name="nodeType" [(ngModel)]="baseInfo.nodeType" class="value--box__content radio--button">
+>>>>>>> 9c62c54ae8fe05d2d4def007b23a55329520d57f
                     <mat-radio-button value="">文件夹</mat-radio-button>
-                    <mat-radio-button value="bottom">最底层节点</mat-radio-button>                    
+                    <mat-radio-button value="bottom">最底层节点</mat-radio-button>
                 </mat-radio-group>
-              </div>              
+              </div>
         </mat-dialog-content>
         <mat-dialog-actions>
-          <button type="submit"  mat-raised-button >确定</button>
-          <button type="button"  mat-raised-button (click)="cancel()">取消</button>
+          <div style="width: 100%;text-align: right;padding: 20px 0 15px 0;">
+            <button type="button" class="btn btn-default"  (click)="cancel()">取消</button>
+            <button type="submit" class="btn btn-success"   >确定</button>
+          </div>
+
         </mat-dialog-actions>
 </form>
 

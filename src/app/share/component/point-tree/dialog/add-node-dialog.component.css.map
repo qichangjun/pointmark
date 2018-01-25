@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEE,sCAAW;EACT,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,OAAO,EAAE,MAAM;EACf,wDAAiB;IACf,KAAK,EAAE,KAAK;IACZ,WAAW,EAAE,MAAM;EAOrB,yDAAoB;IAClB,eAAe,EAAE,UAAU;IAC3B,2EAAiB;MACf,KAAK,EAAE,IAAI",
+"sources": ["add-node-dialog.component.scss"],
 "names": [],
 "file": "add-node-dialog.component.css"
 }

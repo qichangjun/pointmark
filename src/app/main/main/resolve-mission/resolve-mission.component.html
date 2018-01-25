@@ -7,19 +7,19 @@
       <div class="info-side__content--table">
           <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">指标名称:</span></h4>
-              <span>{{baseInfo.name}}</span>
+              <span class="resolve--mission--value--content">{{baseInfo.name}}</span>
           </div>
           <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">指标分值:</span></h4>
-              <span>{{baseInfo.rate}}分</span>
+              <span class="resolve--mission--value--content">{{baseInfo.rate}}分</span>
           </div>
           <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">指标要求:</span></h4>
-              <span> {{baseInfo.requirements}}</span>
+              <span class="resolve--mission--value--content"> {{baseInfo.requirements}}</span>
           </div>
           <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">评估方式:</span></h4>
-              <span> {{baseInfo.evalutionMethod}}</span>
+              <span class="resolve--mission--value--content"> {{baseInfo.evalutionMethod}}</span>
           </div>
           <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">责任处室:</span></h4>
@@ -31,7 +31,7 @@
           </div>
           <div class="content--table__tr">
               <h4><span class="label label-success content--table__tr__td">更新时间:</span></h4>
-              <span> {{baseInfo.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</span>
+              <span class="resolve--mission--value--content"> {{baseInfo.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</span>
           </div>
           <div class="commit--btn--box">
               <button class="btn btn-danger" (click)="updateMission()">确定</button>
