@@ -5,7 +5,7 @@
   display: none; }
 .tree--node--box:hover .add--node {
   display: inline-block;
-  color: #3eb190;
+  color: #5cb85c;
   text-decoration: none; }
 
 /*# sourceMappingURL=point-tree.component.css.map */
