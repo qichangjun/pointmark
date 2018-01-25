@@ -19,15 +19,15 @@
 
     <div class="info-side__content--table">
         <div class="content--table__tr">
-            <span class="label label-success content--table__tr__td">评分细节:</span>
+            <h4><span class="label label-success content--table__tr__td">评分细节:</span></h4>
             <span> {{baseInfo.ratingDetails}}</span>
         </div>
         <div class="content--table__tr">
-            <span class="label label-success content--table__tr__td">评分方式:</span>
+            <h4><span class="label label-success content--table__tr__td">评分方式:</span></h4>
             <span> {{baseInfo.evalutionMethod}}</span>
         </div>
         <div class="content--table__tr align--top">
-            <span class="label label-success content--table__tr__td">问题清单:</span>
+            <h4><span class="label label-success content--table__tr__td">问题清单:</span></h4>
             <table class="table content--table__tr__table">
                 <tr>
                     <th>#</th>
@@ -52,10 +52,10 @@
                         <a (click)="deleteQuestion(question.id)">删除</a>
                     </td>
                     <td>
-                        {{question.commitTime | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}
+                        {{question.commitTime | dateFormat : 'YYYY-MM-DD'}}
                     </td>
                     <td>
-                        {{question.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}
+                        {{question.time | dateFormat : 'YYYY-MM-DD'}}
                         <a *ngIf="question.questionStatus==0" (click)="updateQuestion(question.id,1)">完成</a>
                     </td>
                 </tr>
@@ -75,18 +75,22 @@
             </div>
         </div>
         <div class="content--table__tr align--top">
-            <span class="label label-success content--table__tr__td">自查记录:</span>
+            <h4><span class="label label-success content--table__tr__td">自查记录:</span></h4>
             <table class="table content--table__tr__table">
                 <tr>
+                    <th width="60">#</th>
                     <th>得分</th>
                     <th>情况说明</th>
                     <th></th>
                     <th></th>
                 </tr>
                 <tr *ngFor="let source of sourceList">
+                  <td>
+                    {{i + 1}}
+                  </td>
                     <td>{{source.score}}</td>
                     <td>{{source.description}}</td>
-                    <td>{{source.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</td>
+                    <td>{{source.time | dateFormat : 'YYYY-MM-DD'}}</td>
                     <td>
                         <a (click)="deleteSource(source)">
                             删除
@@ -113,21 +117,25 @@
         </div>
 
         <div class="content--table__tr">
-            <span class="label label-success content--table__tr__td">证明材料:</span>
+            <h4><span class="label label-success content--table__tr__td">证明材料:</span></h4>
             <span>办公室提供机房图纸，设计文档等</span>
         </div>
 
         <div class="content--table__tr align--top">
-            <span class="label label-success content--table__tr__td">认证材料:</span>
+            <h4><span class="label label-success content--table__tr__td">认证材料:</span></h4>
             <table class="table content--table__tr__table">
                 <tr>
+                    <th width="60">#</th>
                     <th>材料名称</th>
                     <th>提交时间</th>
                     <th></th>
                 </tr>
                 <tr *ngFor="let file of fileList">
+                        <td>
+                          {{i + 1}}
+                        </td>
                         <td>{{file.fileName}}</td>
-                        <td>{{file.time | dateFormat : 'YYYY-MM-DD HH:mm:ss'}}</td>
+                        <td>{{file.time | dateFormat : 'YYYY-MM-DD'}}</td>
                         <td>
                             <a (click)="deleteFile(file)">
                                 删除
@@ -147,7 +155,7 @@
             </a>
             <table class="table" *ngIf="uploader">
                 <tr>
-                    <th>文件名</th>
+                    <th width="60">文件名</th>
                     <th>状态</th>
                     <th></th>
                 </tr>

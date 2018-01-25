@@ -1,4 +1,8 @@
 @charset "utf-8";
+
+body{
+  font-family: Helvetica Neue, Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
 //滚动条样式
 ::-webkit-scrollbar{
   width:8px;
@@ -84,9 +88,13 @@ a{
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding: 10px 15px;
+      padding: 10px 0 10px 15px;
       &.align--top{
-        align-items: baseline;;
+        align-items: baseline;
+        .content--table__tr__td{
+          position: relative;
+          top: -5px;
+        }
       }
       .content--table__tr__td{
         margin-right: 20px;
@@ -96,6 +104,11 @@ a{
       .content--table__tr__table{
         width: calc(100% - 110px);
         margin-bottom: 0;
+        tr{
+          th{
+            border-top: none;
+          }
+        }
       }
     }
     .commit--btn--box{
@@ -138,5 +151,13 @@ a{
   vertical-align: middle;
   width: 10px;
 }
-
+.node-content-wrapper:hover{
+  background: transparent;
+  box-shadow: none;
+}
+.node-wrapper{
+  &:hover{
+    background: #eeeeee;
+  }
+}
 
