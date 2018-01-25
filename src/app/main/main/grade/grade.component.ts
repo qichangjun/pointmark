@@ -96,6 +96,7 @@ export class GradeComponent implements OnInit,AfterViewInit {
         if (!this.parameter.id) {
           return 
         }
+        this.uploader.options.additionalParameter['quotaId'] = this.parameter.id
         return this.gradeService.getBaseInfo(params.id)
       })
       .subscribe(res => {
