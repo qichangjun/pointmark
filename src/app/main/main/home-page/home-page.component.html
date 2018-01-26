@@ -61,7 +61,7 @@
                                 <th>状态</th>
                                 <th></th>
                             </tr>
-                            <tr *ngFor="let file of uploader.queue">
+                            <tr *ngFor="let file of uploader.queue;let i = index;">
                               <td>
                                 {{i + 1}}
                               </td>

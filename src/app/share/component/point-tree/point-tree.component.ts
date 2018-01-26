@@ -112,6 +112,8 @@ export class PointTreeComponent implements OnInit ,AfterViewInit{
     let dialogRef = this.dialog.open(DeleteNodeDialogComponent,config);
     dialogRef.afterClosed().subscribe((res) =>{
       if (res){
+        // this.node.parent.id
+        this.router.navigate([], { queryParams: {id:node.parent.id} });
         this._updateTreeService.toggleEvent({update:true})
         return 
       }
